@@ -1,0 +1,36 @@
+Folder Structure
+portfolio/
+
+├── index.html
+├── style.css
+├── script.js
+│
+├── assets/
+│   ├── profile.jpg
+│   ├── resume.pdf
+│   └── projects/
+│
+└── README.md
+Version 2 Features
+
+This design includes:
+
+✅ Full-screen hero section
+
+✅ Animated background
+
+✅ Typing effect
+
+✅ Glassmorphism cards
+
+✅ Research timeline
+
+✅ Project showcase
+
+✅ Skills section
+
+✅ Contact section
+
+✅ Mobile responsive
+
+✅ Modern dark futuristic theme
