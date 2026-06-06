@@ -1,181 +1,1369 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Himalsha Jayamal | Engineering Portfolio</title>
-
-```
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
-```
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Himalsha Jayamal | RTL · FPGA · Robotics Engineer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="particles.css" />
 </head>
-
 <body>
 
-```
-<div class="bg-animation"></div>
+  <!-- ═══════════ BACKGROUND LAYERS ═══════════ -->
+  <canvas id="particle-canvas"></canvas>
+  <div class="scan-lines"></div>
+  <div class="vignette"></div>
+  <div class="noise-overlay"></div>
 
-<nav>
-    <div class="logo">HJR</div>
+  <!-- ═══════════ CURSOR ═══════════ -->
+  <div class="custom-cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
 
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
+  <!-- ═══════════ LOADING SCREEN ═══════════ -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">[HJR]</div>
+      <div class="loader-bar-wrap"><div class="loader-bar" id="loader-bar"></div></div>
+      <div class="loader-status" id="loader-status">Initialising systems...</div>
+      <div class="loader-sub">PORTFOLIO_v2026 · RTL · FPGA · ROBOTICS</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ NAV ═══════════ -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <!-- Logo image added here -->
+      <img src="assets/logo.png" alt="HJR Logo" class="nav-logo-img">
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#hero"       data-section="hero">Home</a></li>
+      <li><a href="#about"      data-section="about">About</a></li>
+      <li><a href="#projects"   data-section="projects">Projects</a></li>
+      <li><a href="#experience" data-section="experience">Experience</a></li>
+      <li><a href="#research"   data-section="research">Research</a></li>
+      <li><a href="#skills"     data-section="skills">Skills</a></li>
+      <li><a href="#contact"    data-section="contact">Contact</a></li>
     </ul>
-</nav>
 
-<section class="hero">
+    <div class="nav-right">
+      <div class="nav-status-pill">
+        <span class="status-pulse"></span>
+        <span>Available · Sri Lanka</span>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-    <div class="hero-content">
+  <!-- Mobile drawer -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <ul>
+      <li><a href="#hero"       class="drawer-link">Home</a></li>
+      <li><a href="#about"      class="drawer-link">About</a></li>
+      <li><a href="#projects"   class="drawer-link">Projects</a></li>
+      <li><a href="#experience" class="drawer-link">Experience</a></li>
+      <li><a href="#research"   class="drawer-link">Research</a></li>
+      <li><a href="#skills"     class="drawer-link">Skills</a></li>
+      <li><a href="#contact"    class="drawer-link">Contact</a></li>
+    </ul>
+  </div>
 
-        <img src="assets/profile.jpg" alt="Profile Picture" class="profile-pic">
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 01 — HERO
+  ═══════════════════════════════════════════════════════ -->
+  <section id="hero" class="hero-section">
 
-        <h1>Himalsha Jayamal</h1>
+    <div class="hero-left reveal-left">
 
-        <h2 id="typing"></h2>
+      <!-- Profile -->
+      <div class="profile-wrap" id="profile-wrap">
+        <div class="profile-hex-outer">
+          <div class="profile-hex-inner">
+            <!-- Real profile photo added here -->
+            <img src="assets/profile.jpg" alt="Himalsha Jayamal Rathnayaka" />
+          </div>
+        </div>
 
-        <p>
-            Engineering student passionate about Robotics,
-            Computer Architecture, Artificial Intelligence,
-            FPGA Design, Embedded Systems and Future Technologies.
+        <!-- Orbit rings -->
+        <div class="orbit orbit-1">
+          <div class="orbit-dot"></div>
+        </div>
+        <div class="orbit orbit-2">
+          <div class="orbit-dot"></div>
+        </div>
+
+        <!-- Corner scan brackets -->
+        <div class="scan-bracket tl"></div>
+        <div class="scan-bracket tr"></div>
+        <div class="scan-bracket bl"></div>
+        <div class="scan-bracket br"></div>
+
+        <!-- HUD overlay info chips -->
+        <div class="hud-chip hud-top">ID · HJR_2026</div>
+        <div class="hud-chip hud-bottom">RTL · FPGA · AI</div>
+      </div>
+
+      <!-- Role pills -->
+      <div class="role-pills">
+        <span class="pill pill-primary">RTL Designer</span>
+        <span class="pill">FPGA Engineer</span>
+        <span class="pill">Robotics</span>
+        <span class="pill">AI Research</span>
+      </div>
+
+      <!-- Quick stats -->
+      <div class="quick-stats">
+        <div class="qs-item">
+          <span class="qs-num" data-target="1200">0</span><span class="qs-unit">+</span>
+          <span class="qs-label">RTL Tests</span>
+        </div>
+        <div class="qs-divider"></div>
+        <div class="qs-item">
+          <span class="qs-num" data-target="11">0</span><span class="qs-unit"></span>
+          <span class="qs-label">Projects</span>
+        </div>
+        <div class="qs-divider"></div>
+        <div class="qs-item">
+          <span class="qs-num" data-target="3">0</span><span class="qs-unit">×</span>
+          <span class="qs-label">Degrees</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hero-right reveal-right">
+
+      <div class="hero-eyebrow">
+        <div class="eyebrow-line"></div>
+        <span>PORTFOLIO_v2026</span>
+        <div class="eyebrow-dot"></div>
+      </div>
+
+      <h1 class="hero-name">
+        <span class="name-word">Himalsha</span><br>
+        <span class="name-word name-accent">Jayamal</span>
+      </h1>
+      <p class="hero-surname">Rathnayaka</p>
+
+      <div class="hero-role-line">
+        <span class="role-comment">// </span>
+        <span id="typed-role"></span>
+        <span class="type-cursor">█</span>
+      </div>
+
+      <p class="hero-bio">
+        Higher Diploma graduate in Electrical & Electronic Engineering with <strong>Distinction</strong>
+        and Academic Excellence Award. Currently pursuing BEng at the University of Sunderland.
+        Building at the intersection of silicon and intelligence — from custom 8-bit processors
+        to autonomous SLAM robots.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#projects" class="cta-btn cta-primary">
+          <span>View Projects</span>
+          <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="assets/resume.pdf" download class="cta-btn cta-ghost">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          <span>Download CV</span>
+        </a>
+        <a href="#contact" class="cta-btn cta-ghost">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>Contact</span>
+        </a>
+      </div>
+
+      <!-- Terminal snippet -->
+      <div class="terminal-card">
+        <div class="terminal-header">
+          <div class="t-dot t-red"></div>
+          <div class="t-dot t-yellow"></div>
+          <div class="t-dot t-green"></div>
+          <span class="t-title">hjr@processor:~$</span>
+        </div>
+        <div class="terminal-body">
+          <div class="t-line"><span class="t-key">name</span><span class="t-eq"> = </span><span class="t-val">"Himalsha Jayamal Rathnayaka"</span></div>
+          <div class="t-line"><span class="t-key">role</span><span class="t-eq"> = </span><span class="t-val">"RTL · FPGA · Robotics Engineer"</span></div>
+          <div class="t-line"><span class="t-key">status</span><span class="t-eq"> = </span><span class="t-green-val">"Seeking entry-level RTL / FPGA role"</span></div>
+          <div class="t-line"><span class="t-key">location</span><span class="t-eq"> = </span><span class="t-val">"Agalawatta, Sri Lanka"</span></div>
+          <div class="t-line"><span class="t-key">current_project</span><span class="t-eq"> = </span><span class="t-orange-val">"Adaptive Cache Controller · 8-bit CPU"</span></div>
+          <div class="t-line t-blink"><span class="t-prompt">▸</span> <span class="t-cmd">ready --for-opportunities</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 02 — ABOUT
+  ═══════════════════════════════════════════════════════ -->
+  <section id="about" class="section">
+    <div class="section-label reveal-up">
+      <span class="label-tag">01</span>
+      <h2 class="section-title">About Me</h2>
+      <div class="label-line"></div>
+    </div>
+
+    <div class="about-layout">
+
+      <div class="about-story glass-panel reveal-left">
+        <div class="panel-glow"></div>
+        <h3 class="panel-heading">My Story</h3>
+        <!--
+        ╔════════════════════════════════════════════════════════════╗
+        ║  ADD YOUR PERSONAL STORY HERE                              ║
+        ║                                                            ║
+        ║  Suggested content:                                        ║
+        ║  · Your engineering journey (why EEE? what sparked it?)   ║
+        ║  · Your passion for RTL, processor design, and robotics   ║
+        ║  · The Distinction + Academic Excellence Award story       ║
+        ║  · Juggling three degree programmes simultaneously         ║
+        ║  · Long-term vision — research? industry? PhD?            ║
+        ║  · What makes you unique as an engineer                   ║
+        ╚════════════════════════════════════════════════════════════╝
+        -->
+        <p class="about-text">
+          [YOUR PERSONAL STORY — Replace this placeholder with 2–4 paragraphs about
+          your engineering journey, what drives your passion for processor design and
+          robotics, your Distinction achievement, and your long-term goals.]
+        </p>
+        <div class="about-quote">
+          <span class="quote-mark">"</span>
+          <span>
+            How does the entire system work — and how can it be improved?
+          </span>
+        </div>
+      </div>
+
+      <div class="about-right">
+
+        <!-- Education timeline -->
+        <div class="edu-panel glass-panel reveal-right">
+          <div class="panel-glow"></div>
+          <h3 class="panel-heading">Education</h3>
+
+          <div class="edu-timeline">
+
+            <div class="edu-node">
+              <div class="edu-dot active"></div>
+              <div class="edu-connector"></div>
+              <div class="edu-info">
+                <div class="edu-badge">IN PROGRESS</div>
+                <p class="edu-degree">BEng Electrical &amp; Electronic Engineering</p>
+                <p class="edu-inst">University of Sunderland · ICBT Campus, Colombo</p>
+                <p class="edu-date">January 2026 — Present</p>
+              </div>
+            </div>
+
+            <div class="edu-node">
+              <div class="edu-dot completed"></div>
+              <div class="edu-connector"></div>
+              <div class="edu-info">
+                <div class="edu-badge completed-badge">DISTINCTION ★</div>
+                <p class="edu-degree">HD Electrical &amp; Electronic Engineering</p>
+                <p class="edu-inst">Liverpool John Moores Univ. · ICBT Campus</p>
+                <p class="edu-date">Oct 2023 — Aug 2025 · Academic Excellence Award</p>
+              </div>
+            </div>
+
+            <div class="edu-node">
+              <div class="edu-dot active"></div>
+              <div class="edu-info">
+                <div class="edu-badge">IN PROGRESS</div>
+                <p class="edu-degree">BSc Natural Science</p>
+                <p class="edu-inst">The Open University of Sri Lanka</p>
+                <p class="edu-date">April 2024 — Present · Applied Math, Physics, CS</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Engineering profile chips -->
+        <div class="profile-chips reveal-right" style="animation-delay:0.2s">
+          <div class="chip-grid">
+            <div class="chip"><span class="chip-icon">⟨/⟩</span><span>HDL Designer</span></div>
+            <div class="chip"><span class="chip-icon">◈</span><span>FPGA Engineer</span></div>
+            <div class="chip"><span class="chip-icon">⊕</span><span>ROS 2 Developer</span></div>
+            <div class="chip"><span class="chip-icon">λ</span><span>Python / C++</span></div>
+            <div class="chip"><span class="chip-icon">◎</span><span>RTL Verification</span></div>
+            <div class="chip"><span class="chip-icon">⚙</span><span>Industrial Systems</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 03 — PROJECTS
+  ═══════════════════════════════════════════════════════ -->
+  <section id="projects" class="section">
+    <div class="section-label reveal-up">
+      <span class="label-tag">02</span>
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="label-line"></div>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="filter-tabs reveal-up">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="hardware">Hardware &amp; RTL</button>
+      <button class="filter-btn" data-filter="robotics">Robotics &amp; AI</button>
+      <button class="filter-btn" data-filter="embedded">Embedded</button>
+      <button class="filter-btn" data-filter="signal">Signal &amp; Control</button>
+    </div>
+
+    <div class="projects-masonry" id="projects-container">
+
+      <!-- ─── FLAGSHIP 1: Adaptive Cache Controller ─── -->
+      <div class="proj-card proj-featured reveal-up" data-cat="hardware">
+        <div class="proj-glow"></div>
+        <div class="proj-header">
+          <div class="proj-num">FY·01</div>
+          <div class="proj-status-badges">
+            <span class="badge badge-wip">IN PROGRESS</span>
+            <span class="badge badge-fyp">FINAL YEAR</span>
+          </div>
+        </div>
+        <h3 class="proj-title">Adaptive Cache Controller on Custom 8-bit Processor</h3>
+        <p class="proj-subtitle">BEng Final Year Project · University of Sunderland · Supervisor: Dr. Kasun Weranga</p>
+        <p class="proj-desc">
+          Designed a complete 8-bit multi-cycle processor platform in SystemVerilog with a custom 16-bit instruction set.
+          The centrepiece is a Q-learning-based adaptive cache controller that dynamically selects between cache-fill,
+          bypass, and prefetch-oriented actions by observing workload patterns (hotset, streaming, conflict, random, mixed).
+          Implemented hardware guardrails — oscillation clamp, regression fallback, bandwidth cap, conflict override —
+          for stable policy transitions. Verified with directed testbench (308 checks, zero failures) and full-core
+          UVM verification (zero warnings/errors/fatals). Synthesised and implemented in Vivado meeting 50 MHz timing.
         </p>
 
-        <div class="hero-buttons">
-            <a href="#projects" class="btn">View Projects</a>
-
-            <a href="assets/resume.pdf" download class="btn secondary-btn">
-                Download CV
-            </a>
+        <div class="proj-architecture">
+          <h4 class="arch-heading">System Architecture</h4>
+          <div class="arch-pipeline">
+            <div class="arch-block cpu-block">
+              <div class="arch-icon">⬡</div>
+              <div class="arch-label">8-bit CPU Core</div>
+              <div class="arch-sub">ALU · RegFile · Decoder · PC</div>
+            </div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-block cache-block">
+              <div class="arch-icon">◫</div>
+              <div class="arch-label">L1 Cache + Victim Buffer</div>
+              <div class="arch-sub">Direct-mapped · 8 lines</div>
+            </div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-block llc-block">
+              <div class="arch-icon">◫</div>
+              <div class="arch-label">LLC + Stream Buffer</div>
+              <div class="arch-sub">4 entries · prefetch</div>
+            </div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-block rl-block">
+              <div class="arch-icon">◉</div>
+              <div class="arch-label">RL Controller</div>
+              <div class="arch-sub">Q-table 4×3 · Guardrails</div>
+            </div>
+          </div>
         </div>
 
-    </div>
+        <div class="proj-highlights">
+          <div class="proj-highlight">
+            <span class="h-icon">✓</span>
+            <span><strong>308</strong> directed CPU tests — zero failures</span>
+          </div>
+          <div class="proj-highlight">
+            <span class="h-icon">✓</span>
+            <span>Full-core UVM — zero warnings, errors, or fatal failures</span>
+          </div>
+          <div class="proj-highlight">
+            <span class="h-icon">✓</span>
+            <span>FPGA-targeted synthesis met <strong>50 MHz</strong> timing constraint (Vivado)</span>
+          </div>
+          <div class="proj-highlight">
+            <span class="h-icon">✓</span>
+            <span>Q-table: only 12 × 8-bit values — &lt;100 bits total storage</span>
+          </div>
+          <div class="proj-highlight">
+            <span class="h-icon">✓</span>
+            <span>Legal-action mask enforces bounded, stable exploration — research gap contribution</span>
+          </div>
+        </div>
 
-</section>
+        <div class="proj-policies">
+          <h4 class="arch-heading">Cache Policies Implemented</h4>
+          <div class="policy-grid">
+            <span class="policy-chip">RRIP-style</span>
+            <span class="policy-chip">DRRIP-style</span>
+            <span class="policy-chip">SHiP-style</span>
+            <span class="policy-chip">Bypass</span>
+            <span class="policy-chip">Prefetch</span>
+            <span class="policy-chip">Q-learning Adaptive</span>
+            <span class="policy-chip">LRU baseline</span>
+            <span class="policy-chip">FIFO baseline</span>
+          </div>
+        </div>
 
-<section id="about">
+        <div class="proj-tech-stack">
+          <span class="tech-pill hot">SystemVerilog</span>
+          <span class="tech-pill hot">UVM</span>
+          <span class="tech-pill hot">Vivado XSim</span>
+          <span class="tech-pill">RTL Design</span>
+          <span class="tech-pill">Q-Learning</span>
+          <span class="tech-pill">FPGA Synthesis</span>
+          <span class="tech-pill">Verification</span>
+        </div>
+      </div>
 
-    <h2>About Me</h2>
-
-    <div class="glass">
-
-        <p>
-            Add your personal story here. Talk about your engineering
-            journey, your passion for innovation, robotics, AI,
-            processor design, research ambitions and long-term goals.
+      <!-- ─── FLAGSHIP 2: SLAM Robot ─── -->
+      <div class="proj-card proj-featured reveal-up" data-cat="robotics" style="animation-delay:0.1s">
+        <div class="proj-glow proj-glow-green"></div>
+        <div class="proj-header">
+          <div class="proj-num">FY·02</div>
+          <div class="proj-status-badges">
+            <span class="badge badge-complete">COMPLETED</span>
+            <span class="badge badge-fyp">FINAL YEAR HD</span>
+          </div>
+        </div>
+        <h3 class="proj-title">Semantic-Aware SLAM Robot with RL &amp; Triple-Layer Safety</h3>
+        <p class="proj-subtitle">HD Final Year Project · LJMU · Group: ROBOSERVE · Supervisor: Mr. Ruwan Fernando</p>
+        <p class="proj-desc">
+          Developed an advanced autonomous navigation system integrating Semantic-Aware SLAM with Reinforcement Learning
+          and triple-layer safety protocols. The system combined multi-sensor fusion (LiDAR, IMU, RGB camera, odometry)
+          with YOLO-based semantic segmentation for environment understanding. Three navigation strategies were designed
+          and benchmarked: (1) traditional SLAM + path planning using Google Cartographer, (2) end-to-end RL navigation,
+          and (3) the selected hybrid SLAM-RL approach with PPO &amp; SAC agents from Stable-Baselines3. The hardware
+          platform features a Raspberry Pi 5 brain with ESP32-S3 motor control, LiDAR, IMX477 camera, MPU-6050 IMU,
+          HC-SR04 ultrasonic arrays, and VL53L0X ToF sensors.
         </p>
 
+        <div class="proj-three-approaches">
+          <h4 class="arch-heading">Three Navigation Approaches Compared</h4>
+          <div class="approach-grid">
+            <div class="approach-card">
+              <div class="approach-num">01</div>
+              <div class="approach-title">Traditional SLAM</div>
+              <p>Google Cartographer + Nav2 path planning. Reliable but rigid — no adaptive learning.</p>
+            </div>
+            <div class="approach-card">
+              <div class="approach-num">02</div>
+              <div class="approach-title">End-to-End RL</div>
+              <p>Stable-Baselines3 PPO &amp; SAC. Adaptive but no geometric map for precision localisation.</p>
+            </div>
+            <div class="approach-card approach-selected">
+              <div class="approach-num">03 ★</div>
+              <div class="approach-title">Hybrid SLAM-RL</div>
+              <p>SLAM precision + RL adaptability + YOLO semantics + triple-layer safety. Best of all worlds.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj-highlights">
+          <div class="proj-highlight">
+            <span class="h-icon">✓</span>
+            <span>Multi-sensor fusion: LiDAR + IMU + RGB camera + wheel odometry</span>
+          </div>
+          <div class="proj-highlight">
+            <span class="h-icon">✓</span>
+            <span>RTAB-Map SLAM within ROS 2 — real-time mapping and localisation</span>
+          </div>
+          <div class="proj-highlight">
+            <span class="h-icon">✓</span>
+            <span>YOLO-based semantic segmentation for dynamic obstacle classification</span>
+          </div>
+          <div class="proj-highlight">
+            <span class="h-icon">✓</span>
+            <span>Triple-layer safety: real-time monitoring + fault detection + recovery</span>
+          </div>
+          <div class="proj-highlight">
+            <span class="h-icon">✓</span>
+            <span>Tested in Gazebo simulation — mapping, localisation, and navigation benchmarked</span>
+          </div>
+        </div>
+
+        <div class="sensor-row">
+          <h4 class="arch-heading">Hardware Platform</h4>
+          <div class="sensor-chips">
+            <div class="sensor-chip">
+              <span class="sensor-name">Raspberry Pi 5</span>
+              <span class="sensor-role">Main CPU</span>
+            </div>
+            <div class="sensor-chip">
+              <span class="sensor-name">ESP32-S3</span>
+              <span class="sensor-role">Motor Control</span>
+            </div>
+            <div class="sensor-chip">
+              <span class="sensor-name">LiDAR</span>
+              <span class="sensor-role">2D Mapping</span>
+            </div>
+            <div class="sensor-chip">
+              <span class="sensor-name">IMX477</span>
+              <span class="sensor-role">RGB Camera</span>
+            </div>
+            <div class="sensor-chip">
+              <span class="sensor-name">MPU-6050</span>
+              <span class="sensor-role">IMU</span>
+            </div>
+            <div class="sensor-chip">
+              <span class="sensor-name">HC-SR04</span>
+              <span class="sensor-role">Ultrasonic</span>
+            </div>
+            <div class="sensor-chip">
+              <span class="sensor-name">VL53L0X</span>
+              <span class="sensor-role">ToF</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj-tech-stack">
+          <span class="tech-pill hot">ROS 2</span>
+          <span class="tech-pill hot">Python</span>
+          <span class="tech-pill">Gazebo</span>
+          <span class="tech-pill">RTAB-Map</span>
+          <span class="tech-pill">Stable-Baselines3</span>
+          <span class="tech-pill">YOLO</span>
+          <span class="tech-pill">PPO / SAC</span>
+          <span class="tech-pill">Linux</span>
+        </div>
+      </div>
+
+      <!-- ─── RoboServe ─── -->
+      <div class="proj-card reveal-up" data-cat="robotics" style="animation-delay:0.15s">
+        <div class="proj-glow"></div>
+        <div class="proj-header">
+          <div class="proj-num">03</div>
+        </div>
+        <h3 class="proj-title">RoboServe</h3>
+        <p class="proj-desc">
+          <!--
+          ╔═════════════════════════════════════════════════╗
+          ║  ADD DESCRIPTION: What does RoboServe do?       ║
+          ║  - What is the hospitality/service use case?    ║
+          ║  - What hardware did you use?                   ║
+          ║  - What AI/navigation features does it have?    ║
+          ╚═════════════════════════════════════════════════╝
+          -->
+          [ADD: RoboServe description — hardware, capabilities, AI features,
+          and what makes it a hospitality robot.]
+        </p>
+        <div class="proj-tech-stack">
+          <span class="tech-pill">Robotics</span>
+          <span class="tech-pill">AI</span>
+          <!-- ADD more tech tags -->
+        </div>
+      </div>
+
+      <!-- ─── PEBBLES ─── -->
+      <div class="proj-card reveal-up" data-cat="robotics" style="animation-delay:0.2s">
+        <div class="proj-glow"></div>
+        <div class="proj-header">
+          <div class="proj-num">04</div>
+        </div>
+        <h3 class="proj-title">PEBBLES</h3>
+        <p class="proj-subtitle">ROS 2 Robot Platform</p>
+        <p class="proj-desc">
+          <!--
+          ╔════════════════════════════════════════════════════╗
+          ║  ADD DESCRIPTION: What is the PEBBLES platform?   ║
+          ║  - Hardware specs and chassis                      ║
+          ║  - Navigation approach                             ║
+          ║  - Key features and capabilities                   ║
+          ╚════════════════════════════════════════════════════╝
+          -->
+          [ADD: PEBBLES description — hardware platform, navigation features,
+          what makes it distinct from the SLAM robot.]
+        </p>
+        <div class="proj-tech-stack">
+          <span class="tech-pill hot">ROS 2</span>
+          <span class="tech-pill">Navigation</span>
+        </div>
+      </div>
+
+      <!-- ─── Hospital Priority Encoder ─── -->
+      <div class="proj-card reveal-up" data-cat="hardware" style="animation-delay:0.05s">
+        <div class="proj-glow"></div>
+        <div class="proj-header">
+          <div class="proj-num">05</div>
+        </div>
+        <h3 class="proj-title">Hospital Alert Priority Encoder</h3>
+        <p class="proj-subtitle">Verilog · FPGA Simulation</p>
+        <p class="proj-desc">
+          Designed and implemented a 10:4 priority encoder in Verilog that identifies and displays the
+          highest-priority alert signal on a 7-segment display. Demonstrated the full FPGA design flow:
+          design → simulation → synthesis → implementation. Maps directly to interrupt controller
+          principles found in embedded processors.
+        </p>
+        <div class="proj-tech-stack">
+          <span class="tech-pill hot">Verilog</span>
+          <span class="tech-pill">FPGA</span>
+          <span class="tech-pill">Xilinx ISE</span>
+          <span class="tech-pill">Digital Design</span>
+        </div>
+      </div>
+
+      <!-- ─── AGV ─── -->
+      <div class="proj-card reveal-up" data-cat="embedded" style="animation-delay:0.1s">
+        <div class="proj-glow"></div>
+        <div class="proj-header">
+          <div class="proj-num">06</div>
+        </div>
+        <h3 class="proj-title">AGV — Garment Industry Automation</h3>
+        <p class="proj-subtitle">Arduino · Sensors · Embedded Control</p>
+        <p class="proj-desc">
+          Designed an Arduino-based Automated Guided Vehicle with LDR-based stop logic for autonomous
+          material transport in garment manufacturing. Developed prototype control logic including
+          guidance, obstacle response, and stop-station detection. A miniature version of the warehouse
+          automation systems used in modern logistics.
+        </p>
+        <div class="proj-tech-stack">
+          <span class="tech-pill hot">Arduino</span>
+          <span class="tech-pill">C++</span>
+          <span class="tech-pill">LDR Sensors</span>
+          <span class="tech-pill">Automation</span>
+        </div>
+      </div>
+
+      <!-- ─── PIC Soil Moisture ─── -->
+      <div class="proj-card reveal-up" data-cat="embedded" style="animation-delay:0.15s">
+        <div class="proj-glow"></div>
+        <div class="proj-header">
+          <div class="proj-num">07</div>
+        </div>
+        <h3 class="proj-title">PIC-Based Soil Moisture Monitoring System</h3>
+        <p class="proj-subtitle">Embedded · ADC · LCD · Irrigation Control</p>
+        <p class="proj-desc">
+          Developed a PIC microcontroller-based system that reads soil moisture via ADC, displays
+          live readings on an LCD, and automatically activates irrigation. Demonstrates real-world
+          sensor interfacing, analog-to-digital conversion, and embedded control logic — a foundation
+          of modern smart agriculture systems.
+        </p>
+        <div class="proj-tech-stack">
+          <span class="tech-pill">PIC MCU</span>
+          <span class="tech-pill">ADC</span>
+          <span class="tech-pill">C</span>
+          <span class="tech-pill">LCD Interface</span>
+        </div>
+      </div>
+
+      <!-- ─── Ball-on-Beam ─── -->
+      <div class="proj-card reveal-up" data-cat="signal" style="animation-delay:0.2s">
+        <div class="proj-glow"></div>
+        <div class="proj-header">
+          <div class="proj-num">08</div>
+        </div>
+        <h3 class="proj-title">Ball-on-Beam PID Control System</h3>
+        <p class="proj-subtitle">Control Engineering · Simulink · PID</p>
+        <p class="proj-desc">
+          Modelled and simulated the classic ball-on-beam dynamic control problem in MATLAB Simulink.
+          Applied PID control to achieve stable ball positioning, analysed transient response,
+          steady-state error, and stability margins. The same principles underpin aircraft autopilots,
+          industrial process control, and robotic balancing systems.
+        </p>
+        <div class="proj-tech-stack">
+          <span class="tech-pill">MATLAB</span>
+          <span class="tech-pill">Simulink</span>
+          <span class="tech-pill">PID Control</span>
+          <span class="tech-pill">Stability Analysis</span>
+        </div>
+      </div>
+
+      <!-- ─── ECG Apnea ─── -->
+      <div class="proj-card reveal-up" data-cat="signal" style="animation-delay:0.05s">
+        <div class="proj-glow"></div>
+        <div class="proj-header">
+          <div class="proj-num">09</div>
+        </div>
+        <h3 class="proj-title">Apnea ECG Signal Analysis</h3>
+        <p class="proj-subtitle">Biomedical Signal Processing · FFT · MATLAB</p>
+        <p class="proj-desc">
+          Processed noisy ECG biomedical signals in MATLAB using Fast Fourier Transform and digital
+          filtering. Added controlled noise levels and extracted signal characteristics in the frequency
+          domain. Demonstrates hands-on experience with biomedical signal processing — directly relevant
+          to wearable health monitoring and medical device engineering.
+        </p>
+        <div class="proj-tech-stack">
+          <span class="tech-pill">MATLAB</span>
+          <span class="tech-pill">FFT</span>
+          <span class="tech-pill">Signal Processing</span>
+          <span class="tech-pill">Digital Filters</span>
+        </div>
+      </div>
+
+      <!-- ─── PLC Metal Shaping ─── -->
+      <div class="proj-card reveal-up" data-cat="embedded" style="animation-delay:0.1s">
+        <div class="proj-glow"></div>
+        <div class="proj-header">
+          <div class="proj-num">10</div>
+        </div>
+        <h3 class="proj-title">PLC-Based Metal Shaping Machine</h3>
+        <p class="proj-subtitle">Industrial Automation · Ladder Logic · Pneumatics</p>
+        <p class="proj-desc">
+          Simulated a complete industrial metal shaping process in Automation Studio using PLC
+          ladder logic and pneumatic sequencing. Implemented sequential control: clamp → move
+          tool → shape → return → release. Directly applicable to manufacturing automation
+          — the same architecture used in modern CNC and robotic manufacturing cells.
+        </p>
+        <div class="proj-tech-stack">
+          <span class="tech-pill">PLC</span>
+          <span class="tech-pill">Ladder Logic</span>
+          <span class="tech-pill">Pneumatics</span>
+          <span class="tech-pill">Automation Studio</span>
+        </div>
+      </div>
+
+      <!-- ─── Water Level Controller ─── -->
+      <div class="proj-card reveal-up" data-cat="hardware" style="animation-delay:0.15s">
+        <div class="proj-glow"></div>
+        <div class="proj-header">
+          <div class="proj-num">11</div>
+        </div>
+        <h3 class="proj-title">Water Level Controller — Logic Gate Design</h3>
+        <p class="proj-subtitle">Digital Logic · Combinational Design · Proteus</p>
+        <p class="proj-desc">
+          Designed a digital pump control system using combinational logic gates and simulated
+          float switches in Proteus, with manual override capability. Demonstrates that control
+          decisions can be implemented entirely in hardware logic — without software — a key
+          insight in digital systems design.
+        </p>
+        <div class="proj-tech-stack">
+          <span class="tech-pill">Logic Gates</span>
+          <span class="tech-pill">Proteus</span>
+          <span class="tech-pill">Digital Design</span>
+          <span class="tech-pill">Control Systems</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 04 — EXPERIENCE
+  ═══════════════════════════════════════════════════════ -->
+  <section id="experience" class="section">
+    <div class="section-label reveal-up">
+      <span class="label-tag">03</span>
+      <h2 class="section-title">Work Experience</h2>
+      <div class="label-line"></div>
     </div>
 
-</section>
+    <div class="exp-layout">
 
-<section id="projects">
-
-    <h2>Featured Projects</h2>
-
-    <div class="grid">
-
-        <div class="card">
-            <h3>RoboServe</h3>
-            <p>Autonomous hospitality robot with AI capabilities.</p>
+      <div class="exp-card glass-panel reveal-left">
+        <div class="panel-glow"></div>
+        <div class="exp-header">
+          <div class="exp-title-block">
+            <div class="exp-company-logo">HF</div>
+            <div>
+              <h3 class="exp-role">Electrical Engineering Intern</h3>
+              <p class="exp-company">Hayleys Fabric PLC · Neboda, Sri Lanka</p>
+            </div>
+          </div>
+          <div class="exp-date-badge">Aug 2025 — Feb 2026</div>
         </div>
 
-        <div class="card">
-            <h3>PEBBLES</h3>
-            <p>ROS 2 based robot platform with autonomous navigation.</p>
+        <div class="exp-impact-bar">
+          <div class="impact-item">
+            <span class="impact-val">+37.5%</span>
+            <span class="impact-label">Production Speed ↑ (16 → 22 m/min)</span>
+          </div>
+          <div class="impact-divider"></div>
+          <div class="impact-item">
+            <span class="impact-val">~5°C</span>
+            <span class="impact-label">Temperature Reduction</span>
+          </div>
         </div>
 
-        <div class="card">
-            <h3>Processor Architecture</h3>
-            <p>Custom CPU, cache and RTL design research.</p>
+        <div class="exp-areas">
+          <div class="exp-area-group">
+            <h4 class="exp-area-title">⚡ VFDs &amp; Motor Control</h4>
+            <ul class="exp-bullets">
+              <li>Configured Schneider Electric Variable Frequency Drives — acceleration/deceleration profiles and operational frequency limits for industrial motor systems</li>
+              <li>Troubleshot and maintained DOL, star-delta, and forward-reverse motor control systems</li>
+            </ul>
+          </div>
+          <div class="exp-area-group">
+            <h4 class="exp-area-title">🔬 Instrumentation &amp; Sensing</h4>
+            <ul class="exp-bullets">
+              <li>Worked with PT100 temperature sensors, pressure sensors, relays, timers, and pneumatic actuators in live manufacturing environments</li>
+              <li>Supported installation and commissioning of industrial washing/dryer systems including sensor calibration, cable routing, and electrical integration</li>
+            </ul>
+          </div>
+          <div class="exp-area-group">
+            <h4 class="exp-area-title">📊 Analysis &amp; Reporting</h4>
+            <ul class="exp-bullets">
+              <li>Conducted process-performance analysis for Stenter machine optimisation using Excel data analysis — production speed improved 16 → 22 m/min and operating temperature reduced ~5°C</li>
+              <li>Prepared MTTR and MTBF maintenance reliability reports from operational data</li>
+            </ul>
+          </div>
+          <div class="exp-area-group">
+            <h4 class="exp-area-title">🔧 Pneumatics &amp; Maintenance</h4>
+            <ul class="exp-bullets">
+              <li>Performed maintenance and fault rectification of pneumatic systems including solenoid valve replacement and leakage correction</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="card">
-            <h3>Industrial Automation</h3>
-            <p>PLC, pneumatics and industrial control systems.</p>
+        <div class="exp-tech-row">
+          <span class="tech-pill">Schneider VFDs</span>
+          <span class="tech-pill">PLC Systems</span>
+          <span class="tech-pill">PT100 Sensors</span>
+          <span class="tech-pill">Pneumatics</span>
+          <span class="tech-pill">Motor Control</span>
+          <span class="tech-pill">MTTR/MTBF</span>
+          <span class="tech-pill">Excel Analytics</span>
         </div>
+      </div>
 
     </div>
+  </section>
 
-</section>
-
-<section id="research">
-
-    <h2>Research Timeline</h2>
-
-    <div class="timeline">
-
-        <div class="timeline-item">
-            <h3>2024</h3>
-            <p>Advanced robotics and automation projects.</p>
-        </div>
-
-        <div class="timeline-item">
-            <h3>2025</h3>
-            <p>AI systems, FPGA and embedded design exploration.</p>
-        </div>
-
-        <div class="timeline-item">
-            <h3>2026</h3>
-            <p>Processor architecture and RTL verification research.</p>
-        </div>
-
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 05 — RESEARCH TIMELINE
+  ═══════════════════════════════════════════════════════ -->
+  <section id="research" class="section">
+    <div class="section-label reveal-up">
+      <span class="label-tag">04</span>
+      <h2 class="section-title">Research Timeline</h2>
+      <div class="label-line"></div>
     </div>
 
-</section>
+    <div class="timeline-track">
+      <div class="timeline-spine"></div>
 
-<section id="skills">
+      <div class="tl-item tl-left reveal-left">
+        <div class="tl-year">2023</div>
+        <div class="tl-node"></div>
+        <div class="tl-content glass-panel">
+          <div class="panel-glow"></div>
+          <div class="tl-content-tag">Foundation</div>
+          <h3 class="tl-title">Early Engineering &amp; Digital Design</h3>
+          <!--
+          ╔═══════════════════════════════════════════════╗
+          ║  ADD: Your 2023 projects and milestones        ║
+          ║  - Water level controller                      ║
+          ║  - Rectifier & amplifier design                ║
+          ║  - RLC analysis                                ║
+          ║  - Any other early work                        ║
+          ╚═══════════════════════════════════════════════╝
+          -->
+          <p>[ADD: Your early 2023 projects — logic design, analog electronics, first FPGA experiments, and other foundational work.]</p>
+        </div>
+      </div>
 
-    <h2>Technical Skills</h2>
+      <div class="tl-item tl-right reveal-right">
+        <div class="tl-year">2024</div>
+        <div class="tl-node"></div>
+        <div class="tl-content glass-panel">
+          <div class="panel-glow"></div>
+          <div class="tl-content-tag">Embedded &amp; Control</div>
+          <h3 class="tl-title">Robotics, Embedded Systems &amp; Signal Processing</h3>
+          <p>
+            Built PIC-based soil moisture monitoring and irrigation systems. Designed Arduino-based AGV
+            for garment industry automation. Modelled ball-on-beam PID control in Simulink. Processed
+            ECG biomedical signals using FFT and digital filtering in MATLAB. Designed PLC-based metal
+            shaping machine with pneumatic sequencing. Statistical dataset analysis using SPSS
+            on 50-variable electrical engineering dataset.
+          </p>
+        </div>
+      </div>
 
-    <div class="skills">
+      <div class="tl-item tl-left reveal-left">
+        <div class="tl-year">2025</div>
+        <div class="tl-node tl-node-accent"></div>
+        <div class="tl-content glass-panel">
+          <div class="panel-glow"></div>
+          <div class="tl-content-tag">AI &amp; Industry</div>
+          <h3 class="tl-title">HD Final Year — SLAM Robot &amp; Industrial Internship</h3>
+          <p>
+            Completed HD Final Year Project: Semantic-Aware SLAM Robot with Reinforcement Learning and
+            Triple-Layer Safety (Group ROBOSERVE). Implemented RTAB-Map SLAM, PPO/SAC RL agents with
+            Stable-Baselines3, YOLO semantic segmentation, and triple-layer safety in ROS 2 / Gazebo.
+            Simultaneously completed Electrical Engineering internship at Hayleys Fabric PLC — working on
+            industrial VFDs, motor control circuits, and Stenter machine process optimisation. Graduated
+            HD with <strong>Distinction</strong> and Academic Excellence Award.
+          </p>
+        </div>
+      </div>
 
-        <span>Python</span>
-        <span>C</span>
-        <span>Verilog</span>
-        <span>SystemVerilog</span>
-        <span>UVM</span>
-        <span>FPGA</span>
-        <span>ROS 2</span>
-        <span>Linux</span>
-        <span>PLC</span>
-        <span>AI</span>
-        <span>Embedded Systems</span>
-        <span>Robotics</span>
+      <div class="tl-item tl-right reveal-right">
+        <div class="tl-year">2026</div>
+        <div class="tl-node tl-node-active"></div>
+        <div class="tl-content glass-panel">
+          <div class="panel-glow"></div>
+          <div class="tl-content-tag">BEng FYP · Active</div>
+          <h3 class="tl-title">Custom Processor &amp; Adaptive Cache Research</h3>
+          <p>
+            BEng Final Year Project: Adaptive Cache Controller on custom 8-bit processor in SystemVerilog.
+            Research contribution: hardware-enforced legal-action mask for bounded RL exploration —
+            addressing an identified gap in adaptive cache literature. Full-core UVM verification with
+            zero failures. FPGA-targeted synthesis meeting 50 MHz. Simultaneously pursuing BSc Natural
+            Science at OUSL.
+          </p>
+        </div>
+      </div>
+
+      <div class="tl-item tl-left reveal-left">
+        <div class="tl-year">Future</div>
+        <div class="tl-node tl-node-future"></div>
+        <div class="tl-content glass-panel tl-future-card">
+          <div class="panel-glow"></div>
+          <div class="tl-content-tag">Vision</div>
+          <h3 class="tl-title">Long-Term Goals &amp; Research Direction</h3>
+          <!--
+          ╔═══════════════════════════════════════════════════════╗
+          ║  ADD: Your future ambitions                           ║
+          ║  - Entry-level RTL/FPGA role? (NVIDIA, AMD, Arm...)  ║
+          ║  - PhD in computer architecture?                      ║
+          ║  - Open-source CPU project?                          ║
+          ║  - ASIC design / SoC engineering?                    ║
+          ╚═══════════════════════════════════════════════════════╝
+          -->
+          <p>[ADD: Your long-term career and research goals — industry target, dream company, PhD ambitions, or open-source hardware projects you want to pursue.]</p>
+        </div>
+      </div>
 
     </div>
+  </section>
 
-</section>
-
-<section id="contact">
-
-    <h2>Contact</h2>
-
-    <div class="glass">
-
-        <p>Email: your_email@example.com</p>
-        <p>GitHub: github.com/yourusername</p>
-        <p>LinkedIn: linkedin.com/in/yourprofile</p>
-
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 06 — SKILLS
+  ═══════════════════════════════════════════════════════ -->
+  <section id="skills" class="section">
+    <div class="section-label reveal-up">
+      <span class="label-tag">05</span>
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="label-line"></div>
     </div>
 
-</section>
+    <div class="skills-layout">
 
-<footer>
-    <p>© 2026 Himalsha Jayamal. All Rights Reserved.</p>
-</footer>
+      <!-- Left: category cards -->
+      <div class="skills-categories">
 
-<script src="script.js"></script>
-```
+        <div class="skill-cat-card glass-panel reveal-left" style="animation-delay:0s">
+          <div class="panel-glow"></div>
+          <div class="scc-header">
+            <span class="scc-icon">⟨/⟩</span>
+            <h3 class="scc-title">HDL &amp; RTL Design</h3>
+          </div>
+          <div class="skill-bars">
+            <div class="sb-item">
+              <span class="sb-label">SystemVerilog</span>
+              <div class="sb-track"><div class="sb-fill" data-pct="88"></div></div>
+              <span class="sb-pct">88%</span>
+            </div>
+            <div class="sb-item">
+              <span class="sb-label">Verilog</span>
+              <div class="sb-track"><div class="sb-fill" data-pct="82"></div></div>
+              <span class="sb-pct">82%</span>
+            </div>
+            <div class="sb-item">
+              <span class="sb-label">RTL Design &amp; FSM</span>
+              <div class="sb-track"><div class="sb-fill" data-pct="80"></div></div>
+              <span class="sb-pct">80%</span>
+            </div>
+            <div class="sb-item">
+              <span class="sb-label">UVM Verification</span>
+              <div class="sb-track"><div class="sb-fill" data-pct="72"></div></div>
+              <span class="sb-pct">72%</span>
+            </div>
+          </div>
+        </div>
 
+        <div class="skill-cat-card glass-panel reveal-left" style="animation-delay:0.1s">
+          <div class="panel-glow"></div>
+          <div class="scc-header">
+            <span class="scc-icon">◈</span>
+            <h3 class="scc-title">FPGA &amp; EDA Tools</h3>
+          </div>
+          <div class="skill-bars">
+            <div class="sb-item">
+              <span class="sb-label">Vivado XSim (AMD/Xilinx)</span>
+              <div class="sb-track"><div class="sb-fill" data-pct="85"></div></div>
+              <span class="sb-pct">85%</span>
+            </div>
+            <div class="sb-item">
+              <span class="sb-label">FPGA Synthesis &amp; Impl.</span>
+              <div class="sb-track"><div class="sb-fill" data-pct="78"></div></div>
+              <span class="sb-pct">78%</span>
+            </div>
+            <div class="sb-item">
+              <span class="sb-label">Xilinx ISE</span>
+              <div class="sb-track"><div class="sb-fill" data-pct="70"></div></div>
+              <span class="sb-pct">70%</span>
+            </div>
+            <div class="sb-item">
+              <span class="sb-label">Proteus / Multisim</span>
+              <div class="sb-track"><div class="sb-fill" data-pct="75"></div></div>
+              <span class="sb-pct">75%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-cat-card glass-panel reveal-left" style="animation-delay:0.2s">
+          <div class="panel-glow"></div>
+          <div class="scc-header">
+            <span class="scc-icon">⊕</span>
+            <h3 class="scc-title">Robotics &amp; Embedded</h3>
+          </div>
+          <div class="skill-bars">
+            <div class="sb-item">
+              <span class="sb-label">ROS 2</span>
+              <div class="sb-track"><div class="sb-fill" data-pct="80"></div></div>
+              <span class="sb-pct">80%</span>
+            </div>
+            <div class="sb-item">
+              <span class="sb-label">Gazebo Simulation</span>
+              <div class="sb-track"><div class="sb-fill" data-pct="75"></div></div>
+              <span class="sb-pct">75%</span>
+            </div>
+            <div class="sb-item">
+              <span class="sb-label">Stable-Baselines3 / RL</span>
+              <div class="sb-track"><div class="sb-fill" data-pct="70"></div></div>
+              <span class="sb-pct">70%</span>
+            </div>
+            <div class="sb-item">
+              <span class="sb-label">Arduino / Embedded C</span>
+              <div class="sb-track"><div class="sb-fill" data-pct="78"></div></div>
+              <span class="sb-pct">78%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-cat-card glass-panel reveal-left" style="animation-delay:0.3s">
+          <div class="panel-glow"></div>
+          <div class="scc-header">
+            <span class="scc-icon">λ</span>
+            <h3 class="scc-title">Programming &amp; Analysis</h3>
+          </div>
+          <div class="skill-bars">
+            <div class="sb-item">
+              <span class="sb-label">Python</span>
+              <div class="sb-track"><div class="sb-fill" data-pct="82"></div></div>
+              <span class="sb-pct">82%</span>
+            </div>
+            <div class="sb-item">
+              <span class="sb-label">C / C++</span>
+              <div class="sb-track"><div class="sb-fill" data-pct="75"></div></div>
+              <span class="sb-pct">75%</span>
+            </div>
+            <div class="sb-item">
+              <span class="sb-label">MATLAB / Simulink</span>
+              <div class="sb-track"><div class="sb-fill" data-pct="78"></div></div>
+              <span class="sb-pct">78%</span>
+            </div>
+            <div class="sb-item">
+              <span class="sb-label">Linux / WSL</span>
+              <div class="sb-track"><div class="sb-fill" data-pct="76"></div></div>
+              <span class="sb-pct">76%</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: tag cloud + soft skills -->
+      <div class="skills-right">
+
+        <div class="skills-tag-cloud glass-panel reveal-right">
+          <div class="panel-glow"></div>
+          <h3 class="panel-heading">Technical Toolkit</h3>
+          <div class="tag-cloud">
+            <span class="tc-tag tc-xl">SystemVerilog</span>
+            <span class="tc-tag tc-lg">ROS 2</span>
+            <span class="tc-tag tc-lg">Python</span>
+            <span class="tc-tag tc-xl">Vivado XSim</span>
+            <span class="tc-tag tc-md">UVM</span>
+            <span class="tc-tag tc-md">Verilog</span>
+            <span class="tc-tag tc-lg">MATLAB</span>
+            <span class="tc-tag tc-sm">SPSS</span>
+            <span class="tc-tag tc-md">Gazebo</span>
+            <span class="tc-tag tc-md">C/C++</span>
+            <span class="tc-tag tc-sm">Xilinx ISE</span>
+            <span class="tc-tag tc-lg">FPGA</span>
+            <span class="tc-tag tc-sm">Proteus</span>
+            <span class="tc-tag tc-md">Linux</span>
+            <span class="tc-tag tc-sm">PLC</span>
+            <span class="tc-tag tc-sm">Arduino IDE</span>
+            <span class="tc-tag tc-md">Stable-Baselines3</span>
+            <span class="tc-tag tc-sm">Multisim</span>
+            <span class="tc-tag tc-sm">YOLO</span>
+            <span class="tc-tag tc-sm">RTL Design</span>
+          </div>
+        </div>
+
+        <div class="soft-skills-card glass-panel reveal-right" style="animation-delay:0.15s">
+          <div class="panel-glow"></div>
+          <h3 class="panel-heading">Professional Skills</h3>
+          <div class="soft-skill-row">
+            <span class="ss-icon">◎</span>
+            <div>
+              <p class="ss-name">Systems Thinking</p>
+              <p class="ss-desc">Designs complete end-to-end architectures before implementation</p>
+            </div>
+          </div>
+          <div class="soft-skill-row">
+            <span class="ss-icon">◎</span>
+            <div>
+              <p class="ss-name">First-Principles Analysis</p>
+              <p class="ss-desc">Traces behaviour to underlying mechanisms, not just surface patterns</p>
+            </div>
+          </div>
+          <div class="soft-skill-row">
+            <span class="ss-icon">◎</span>
+            <div>
+              <p class="ss-name">Research Orientation</p>
+              <p class="ss-desc">Identifies literature gaps and frames contributions clearly</p>
+            </div>
+          </div>
+          <div class="soft-skill-row">
+            <span class="ss-icon">◎</span>
+            <div>
+              <p class="ss-name">Cross-Domain Engineering</p>
+              <p class="ss-desc">RTL + robotics + control + signal processing simultaneously</p>
+            </div>
+          </div>
+          <div class="soft-skill-row">
+            <span class="ss-icon">◎</span>
+            <div>
+              <p class="ss-name">Verification Mindset</p>
+              <p class="ss-desc">Designs for testability — directed + constrained-random + UVM</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Engineering domain coverage -->
+    <div class="domain-coverage reveal-up">
+      <h3 class="panel-heading" style="margin-bottom:24px;text-align:center">Engineering Domain Coverage</h3>
+      <div class="domain-grid">
+        <div class="domain-item">
+          <div class="domain-icon">⟨/⟩</div>
+          <div class="domain-name">Embedded Systems</div>
+          <div class="domain-projects">PIC · Arduino · AGV · Moisture System</div>
+        </div>
+        <div class="domain-item">
+          <div class="domain-icon">◈</div>
+          <div class="domain-name">Digital Hardware</div>
+          <div class="domain-projects">RTL · FPGA · Priority Encoder · Water Controller</div>
+        </div>
+        <div class="domain-item">
+          <div class="domain-icon">⊕</div>
+          <div class="domain-name">Computer Architecture</div>
+          <div class="domain-projects">8-bit CPU · Cache · Adaptive Controller</div>
+        </div>
+        <div class="domain-item">
+          <div class="domain-icon">◉</div>
+          <div class="domain-name">Robotics &amp; AI</div>
+          <div class="domain-projects">SLAM · RL · ROS 2 · YOLO · Sensor Fusion</div>
+        </div>
+        <div class="domain-item">
+          <div class="domain-icon">⌁</div>
+          <div class="domain-name">Control Engineering</div>
+          <div class="domain-projects">PID · Ball-Beam · PLC · Motor Control</div>
+        </div>
+        <div class="domain-item">
+          <div class="domain-icon">∿</div>
+          <div class="domain-name">Signal Processing</div>
+          <div class="domain-projects">ECG · FFT · Filtering · Rectifier · Amplifier</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 07 — CONTACT
+  ═══════════════════════════════════════════════════════ -->
+  <section id="contact" class="section">
+    <div class="section-label reveal-up">
+      <span class="label-tag">06</span>
+      <h2 class="section-title">Contact</h2>
+      <div class="label-line"></div>
+    </div>
+
+    <div class="contact-layout">
+
+      <div class="contact-intro-card glass-panel reveal-left">
+        <div class="panel-glow"></div>
+        <h3 class="panel-heading">Let's Connect</h3>
+        <p class="contact-open-text">
+          Actively seeking entry-level RTL, FPGA, or digital design opportunities.
+          Open to internships, graduate roles, and research collaborations.
+        </p>
+
+        <div class="contact-links">
+          <a href="mailto:himalshaj@gmail.com" class="contact-link-item">
+            <div class="cli-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="cli-info">
+              <span class="cli-label">Email</span>
+              <span class="cli-value">himalshaj@gmail.com</span>
+            </div>
+            <div class="cli-arrow">→</div>
+          </a>
+
+          <a href="https://linkedin.com/in/himalsha-jayamal-9aba7a294" target="_blank" class="contact-link-item">
+            <div class="cli-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            <div class="cli-info">
+              <span class="cli-label">LinkedIn</span>
+              <span class="cli-value">himalsha-jayamal-9aba7a294</span>
+            </div>
+            <div class="cli-arrow">→</div>
+          </a>
+
+          <a href="https://github.com/himalshajayamal" target="_blank" class="contact-link-item">
+            <div class="cli-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            </div>
+            <div class="cli-info">
+              <span class="cli-label">GitHub</span>
+              <span class="cli-value">github.com/himalshajayamal</span>
+            </div>
+            <div class="cli-arrow">→</div>
+          </a>
+
+<!-- Location (Google Maps link) -->
+<a href="https://maps.app.goo.gl/AXmQusUHXjYVEHXy7" target="_blank" class="contact-link-item">
+  <div class="cli-icon-wrap">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+  </div>
+  <div class="cli-info">
+    <span class="cli-label">Location</span>
+    <span class="cli-value">No 32, Baduraliya Road, Agalawatta, 12200, Sri Lanka</span>
+  </div>
+  <div class="cli-arrow">→</div>
+</a>
+
+  <!-- Phone (click to call) -->
+  <a href="tel:+94710986015" class="contact-link-item">
+    <div class="cli-icon-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    </div>
+    <div class="cli-info">
+      <span class="cli-label">Phone</span>
+      <span class="cli-value">+94 71 098 6015</span>
+    </div>
+    <div class="cli-arrow">→</div>
+  </a>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/94710986015?text=Hello%20Himalsha,%20I%20saw%20your%20portfolio" target="_blank" class="contact-link-item">
+    <div class="cli-icon-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 3.4L3 21z" stroke="currentColor" fill="none"/>
+        <path d="M9 10a1 1 0 0 1 1-1h.01M12 10a1 1 0 0 1 1-1h.01M15 10a1 1 0 0 1 1-1h.01" stroke="currentColor" stroke-linecap="round"/>
+        <path d="M8 14c.5 1 2 2.5 4 2.5s3.5-1.5 4-2.5" stroke="currentColor" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="cli-info">
+      <span class="cli-label">WhatsApp</span>
+      <span class="cli-value">Chat with me</span>
+    </div>
+    <div class="cli-arrow">→</div>
+  </a>
+</div>
+
+        <a href="assets/resume.pdf" download class="cta-btn cta-primary" style="margin-top:28px;display:inline-flex">
+          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          <span>Download Full CV</span>
+        </a>
+      </div>
+
+      <!-- Target companies / interests -->
+      <div class="contact-targets glass-panel reveal-right">
+        <div class="panel-glow"></div>
+        <h3 class="panel-heading">Career Interests</h3>
+        <p class="targets-subtitle">Open to opportunities at companies working on:</p>
+
+        <div class="target-area">
+          <h4 class="target-cat">RTL / FPGA / ASIC Engineering</h4>
+          <div class="target-companies">
+            <span class="tc-company">NVIDIA</span>
+            <span class="tc-company">AMD</span>
+            <span class="tc-company">Intel</span>
+            <span class="tc-company">Arm</span>
+            <span class="tc-company">Qualcomm</span>
+            <span class="tc-company">Broadcom</span>
+          </div>
+        </div>
+        <div class="target-area">
+          <h4 class="target-cat">Robotics &amp; AI Hardware</h4>
+          <div class="target-companies">
+            <span class="tc-company">Boston Dynamics</span>
+            <span class="tc-company">Waymo</span>
+            <span class="tc-company">DeepMind</span>
+            <span class="tc-company">Tesla AI</span>
+          </div>
+        </div>
+        <div class="target-area">
+          <h4 class="target-cat">Research &amp; Academia</h4>
+          <div class="target-companies">
+            <span class="tc-company">PhD Computer Architecture</span>
+            <span class="tc-company">Open-Source CPU</span>
+            <span class="tc-company">R&amp;D Lab</span>
+          </div>
+        </div>
+
+        <!-- Areas to strengthen -->
+        <div class="strengthen-area">
+          <h4 class="target-cat">Currently Strengthening</h4>
+          <div class="strengthen-grid">
+            <div class="str-item">
+              <span class="str-bullet">▸</span>
+              <span>Advanced Computer Architecture Theory</span>
+            </div>
+            <div class="str-item">
+              <span class="str-bullet">▸</span>
+              <span>ASIC Design Flow &amp; Physical Design</span>
+            </div>
+            <div class="str-item">
+              <span class="str-bullet">▸</span>
+              <span>Industrial-grade UVM Methodology</span>
+            </div>
+            <div class="str-item">
+              <span class="str-bullet">▸</span>
+              <span>Operating Systems Internals</span>
+            </div>
+            <div class="str-item">
+              <span class="str-bullet">▸</span>
+              <span>Publications &amp; Research Writing</span>
+            </div>
+            <div class="str-item">
+              <span class="str-bullet">▸</span>
+              <span>Open-Source Hardware Contributions</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer>
+    <div class="footer-content">
+      <img src="assets/logo.png" alt="HJR Logo" class="footer-logo-img">
+      <p class="footer-name">R.M. Himalsha Jayamal Rathnayaka</p>
+      <p class="footer-tagline">RTL · FPGA · Robotics · AI · Computer Architecture</p>
+      <div class="footer-links">
+        <a href="mailto:himalshaj@gmail.com">Email</a>
+        <span>·</span>
+        <a href="https://linkedin.com/in/himalsha-jayamal-9aba7a294" target="_blank">LinkedIn</a>
+        <span>·</span>
+        <a href="assets/resume.pdf" download>CV</a>
+      </div>
+      <p class="footer-copy">© 2026 Himalsha Jayamal Rathnayaka · All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
