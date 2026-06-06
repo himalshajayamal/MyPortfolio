@@ -212,24 +212,18 @@
       <div class="about-story glass-panel reveal-left">
         <div class="panel-glow"></div>
         <h3 class="panel-heading">My Story</h3>
-        <!--
-        ╔════════════════════════════════════════════════════════════╗
-        ║  ADD YOUR PERSONAL STORY HERE                              ║
-        ║                                                            ║
-        ║  Suggested content:                                        ║
-        ║  · Your engineering journey (why EEE? what sparked it?)   ║
-        ║  · Your passion for RTL, processor design, and robotics   ║
-        ║  · The Distinction + Academic Excellence Award story       ║
-        ║  · Juggling three degree programmes simultaneously         ║
-        ║  · Long-term vision — research? industry? PhD?            ║
-        ║  · What makes you unique as an engineer                   ║
-        ╚════════════════════════════════════════════════════════════╝
-        -->
-        <p class="about-text">
-          [YOUR PERSONAL STORY — Replace this placeholder with 2–4 paragraphs about
-          your engineering journey, what drives your passion for processor design and
-          robotics, your Distinction achievement, and your long-term goals.]
-        </p>
+<p class="about-text">
+  My journey in engineering began with a fascination for understanding how technology works beneath the surface. Rather than simply using systems, I have always been driven to explore how they are designed, built, and optimized. This curiosity led me to pursue Electrical and Electronic Engineering while simultaneously studying Computer Science, Applied Mathematics, and Physics. Through this multidisciplinary foundation, I developed a strong appreciation for the relationship between hardware, software, mathematics, and intelligent systems.
+</p>
+<p class="about-text">
+  Throughout my academic journey, I have worked on a wide range of engineering projects spanning embedded systems, automation, control engineering, digital design, robotics, signal processing, and artificial intelligence. From developing PIC-based smart irrigation systems and PLC-controlled industrial machines to designing Verilog-based digital systems and autonomous robotics concepts, each project strengthened my ability to approach complex problems from a systems-engineering perspective. My academic dedication was recognized through outstanding performance, including achieving a Distinction and graduating among the top-performing students in my engineering cohort.
+</p>
+<p class="about-text">
+  As my interests evolved, I became increasingly fascinated by computer architecture, processor design, FPGA development, ASIC engineering, and hardware verification. I am particularly interested in how modern processors, memory hierarchies, and AI accelerators are designed and optimized to solve increasingly complex computational challenges. This passion has motivated me to explore advanced topics such as SystemVerilog, UVM verification, adaptive cache architectures, reinforcement learning for hardware optimization, and next-generation computing systems.
+</p>
+<p class="about-text">
+  Beyond technical achievement, I am driven by a desire to contribute to technologies that can shape the future. My long-term goal is to become a leading engineer and researcher in advanced computing systems, semiconductor design, and AI hardware. I aspire to contribute to the development of innovative processor architectures, intelligent hardware systems, and next-generation computing technologies that push the boundaries of performance, efficiency, and intelligence. Through continuous learning, research, and innovation, I aim to bridge the gap between engineering disciplines and help create technologies that have a meaningful global impact.
+</p>
         <div class="about-quote">
           <span class="quote-mark">"</span>
           <span>
@@ -529,403 +523,572 @@
         </div>
       </div>
 
-      <!-- ─── RoboServe ─── -->
-      <div class="proj-card reveal-up" data-cat="robotics" style="animation-delay:0.15s">
-        <div class="proj-glow"></div>
-        <div class="proj-header">
-          <div class="proj-num">03</div>
-        </div>
-        <h3 class="proj-title">RoboServe</h3>
-        <p class="proj-desc">
-          <!--
-          ╔═════════════════════════════════════════════════╗
-          ║  ADD DESCRIPTION: What does RoboServe do?       ║
-          ║  - What is the hospitality/service use case?    ║
-          ║  - What hardware did you use?                   ║
-          ║  - What AI/navigation features does it have?    ║
-          ╚═════════════════════════════════════════════════╝
-          -->
-          [ADD: RoboServe description — hardware, capabilities, AI features,
-          and what makes it a hospitality robot.]
-        </p>
-        <div class="proj-tech-stack">
-          <span class="tech-pill">Robotics</span>
-          <span class="tech-pill">AI</span>
-          <!-- ADD more tech tags -->
-        </div>
-      </div>
+<!-- ───────────────────────────────────────────── -->
+<!-- 01 — RC / RL / RLC Circuit Analysis -->
+<!-- ───────────────────────────────────────────── -->
+<div class="proj-card reveal-up" data-cat="electronics" style="animation-delay:0.05s">
+  <div class="proj-glow"></div>
+  <div class="proj-header">
+    <div class="proj-num">01</div>
+  </div>
 
-      <!-- ─── PEBBLES ─── -->
-      <div class="proj-card reveal-up" data-cat="robotics" style="animation-delay:0.2s">
-        <div class="proj-glow"></div>
-        <div class="proj-header">
-          <div class="proj-num">04</div>
-        </div>
-        <h3 class="proj-title">PEBBLES</h3>
-        <p class="proj-subtitle">ROS 2 Robot Platform</p>
-        <p class="proj-desc">
-          <!--
-          ╔════════════════════════════════════════════════════╗
-          ║  ADD DESCRIPTION: What is the PEBBLES platform?   ║
-          ║  - Hardware specs and chassis                      ║
-          ║  - Navigation approach                             ║
-          ║  - Key features and capabilities                   ║
-          ╚════════════════════════════════════════════════════╝
-          -->
-          [ADD: PEBBLES description — hardware platform, navigation features,
-          what makes it distinct from the SLAM robot.]
-        </p>
-        <div class="proj-tech-stack">
-          <span class="tech-pill hot">ROS 2</span>
-          <span class="tech-pill">Navigation</span>
-        </div>
-      </div>
+  <h3 class="proj-title">RC, RL & RLC Circuit Analysis</h3>
+  <p class="proj-subtitle">Circuit Theory · MATLAB · Multisim</p>
 
-      <!-- ─── Hospital Priority Encoder ─── -->
-      <div class="proj-card reveal-up" data-cat="hardware" style="animation-delay:0.05s">
-        <div class="proj-glow"></div>
-        <div class="proj-header">
-          <div class="proj-num">05</div>
-        </div>
-        <h3 class="proj-title">Hospital Alert Priority Encoder</h3>
-        <p class="proj-subtitle">Verilog · FPGA Simulation</p>
-        <p class="proj-desc">
-          Designed and implemented a 10:4 priority encoder in Verilog that identifies and displays the
-          highest-priority alert signal on a 7-segment display. Demonstrated the full FPGA design flow:
-          design → simulation → synthesis → implementation. Maps directly to interrupt controller
-          principles found in embedded processors.
-        </p>
-        <div class="proj-tech-stack">
-          <span class="tech-pill hot">Verilog</span>
-          <span class="tech-pill">FPGA</span>
-          <span class="tech-pill">Xilinx ISE</span>
-          <span class="tech-pill">Digital Design</span>
-        </div>
-      </div>
+  <p class="proj-desc">
+    Analyzed first and second-order electrical circuits to understand transient and steady-state behavior.
+    Modeled RC, RL, and RLC networks using mathematical differential equations and verified results
+    through MATLAB and Multisim simulations. Forms the foundation of analog and signal systems.
+  </p>
 
-      <!-- ─── AGV ─── -->
-      <div class="proj-card reveal-up" data-cat="embedded" style="animation-delay:0.1s">
-        <div class="proj-glow"></div>
-        <div class="proj-header">
-          <div class="proj-num">06</div>
-        </div>
-        <h3 class="proj-title">AGV — Garment Industry Automation</h3>
-        <p class="proj-subtitle">Arduino · Sensors · Embedded Control</p>
-        <p class="proj-desc">
-          Designed an Arduino-based Automated Guided Vehicle with LDR-based stop logic for autonomous
-          material transport in garment manufacturing. Developed prototype control logic including
-          guidance, obstacle response, and stop-station detection. A miniature version of the warehouse
-          automation systems used in modern logistics.
-        </p>
-        <div class="proj-tech-stack">
-          <span class="tech-pill hot">Arduino</span>
-          <span class="tech-pill">C++</span>
-          <span class="tech-pill">LDR Sensors</span>
-          <span class="tech-pill">Automation</span>
-        </div>
-      </div>
+  <div class="proj-tech-stack">
+    <span class="tech-pill">MATLAB</span>
+    <span class="tech-pill">Multisim</span>
+    <span class="tech-pill">Circuit Theory</span>
+    <span class="tech-pill">Differential Equations</span>
+  </div>
+</div>
 
-      <!-- ─── PIC Soil Moisture ─── -->
-      <div class="proj-card reveal-up" data-cat="embedded" style="animation-delay:0.15s">
-        <div class="proj-glow"></div>
-        <div class="proj-header">
-          <div class="proj-num">07</div>
-        </div>
-        <h3 class="proj-title">PIC-Based Soil Moisture Monitoring System</h3>
-        <p class="proj-subtitle">Embedded · ADC · LCD · Irrigation Control</p>
-        <p class="proj-desc">
-          Developed a PIC microcontroller-based system that reads soil moisture via ADC, displays
-          live readings on an LCD, and automatically activates irrigation. Demonstrates real-world
-          sensor interfacing, analog-to-digital conversion, and embedded control logic — a foundation
-          of modern smart agriculture systems.
-        </p>
-        <div class="proj-tech-stack">
-          <span class="tech-pill">PIC MCU</span>
-          <span class="tech-pill">ADC</span>
-          <span class="tech-pill">C</span>
-          <span class="tech-pill">LCD Interface</span>
-        </div>
-      </div>
 
-      <!-- ─── Ball-on-Beam ─── -->
-      <div class="proj-card reveal-up" data-cat="signal" style="animation-delay:0.2s">
-        <div class="proj-glow"></div>
-        <div class="proj-header">
-          <div class="proj-num">08</div>
-        </div>
-        <h3 class="proj-title">Ball-on-Beam PID Control System</h3>
-        <p class="proj-subtitle">Control Engineering · Simulink · PID</p>
-        <p class="proj-desc">
-          Modelled and simulated the classic ball-on-beam dynamic control problem in MATLAB Simulink.
-          Applied PID control to achieve stable ball positioning, analysed transient response,
-          steady-state error, and stability margins. The same principles underpin aircraft autopilots,
-          industrial process control, and robotic balancing systems.
-        </p>
-        <div class="proj-tech-stack">
-          <span class="tech-pill">MATLAB</span>
-          <span class="tech-pill">Simulink</span>
-          <span class="tech-pill">PID Control</span>
-          <span class="tech-pill">Stability Analysis</span>
-        </div>
-      </div>
+<!-- ───────────────────────────────────────────── -->
+<!-- 02 — Full-Wave Rectifier -->
+<!-- ───────────────────────────────────────────── -->
+<div class="proj-card reveal-up" data-cat="electronics" style="animation-delay:0.1s">
+  <div class="proj-glow"></div>
+  <div class="proj-header">
+    <div class="proj-num">02</div>
+  </div>
 
-      <!-- ─── ECG Apnea ─── -->
-      <div class="proj-card reveal-up" data-cat="signal" style="animation-delay:0.05s">
-        <div class="proj-glow"></div>
-        <div class="proj-header">
-          <div class="proj-num">09</div>
-        </div>
-        <h3 class="proj-title">Apnea ECG Signal Analysis</h3>
-        <p class="proj-subtitle">Biomedical Signal Processing · FFT · MATLAB</p>
-        <p class="proj-desc">
-          Processed noisy ECG biomedical signals in MATLAB using Fast Fourier Transform and digital
-          filtering. Added controlled noise levels and extracted signal characteristics in the frequency
-          domain. Demonstrates hands-on experience with biomedical signal processing — directly relevant
-          to wearable health monitoring and medical device engineering.
-        </p>
-        <div class="proj-tech-stack">
-          <span class="tech-pill">MATLAB</span>
-          <span class="tech-pill">FFT</span>
-          <span class="tech-pill">Signal Processing</span>
-          <span class="tech-pill">Digital Filters</span>
-        </div>
-      </div>
+  <h3 class="proj-title">Full-Wave Rectifier Analysis</h3>
+  <p class="proj-subtitle">Power Electronics · Diodes · Filtering</p>
 
-      <!-- ─── PLC Metal Shaping ─── -->
-      <div class="proj-card reveal-up" data-cat="embedded" style="animation-delay:0.1s">
-        <div class="proj-glow"></div>
-        <div class="proj-header">
-          <div class="proj-num">10</div>
-        </div>
-        <h3 class="proj-title">PLC-Based Metal Shaping Machine</h3>
-        <p class="proj-subtitle">Industrial Automation · Ladder Logic · Pneumatics</p>
-        <p class="proj-desc">
-          Simulated a complete industrial metal shaping process in Automation Studio using PLC
-          ladder logic and pneumatic sequencing. Implemented sequential control: clamp → move
-          tool → shape → return → release. Directly applicable to manufacturing automation
-          — the same architecture used in modern CNC and robotic manufacturing cells.
-        </p>
-        <div class="proj-tech-stack">
-          <span class="tech-pill">PLC</span>
-          <span class="tech-pill">Ladder Logic</span>
-          <span class="tech-pill">Pneumatics</span>
-          <span class="tech-pill">Automation Studio</span>
-        </div>
-      </div>
+  <p class="proj-desc">
+    Designed and analyzed a full-wave rectifier circuit to convert AC to DC.
+    Studied ripple voltage, diode conduction characteristics, and capacitor filtering effects.
+    Demonstrates core principles of power conversion used in all modern electronic systems.
+  </p>
 
-      <!-- ─── Water Level Controller ─── -->
-      <div class="proj-card reveal-up" data-cat="hardware" style="animation-delay:0.15s">
-        <div class="proj-glow"></div>
-        <div class="proj-header">
-          <div class="proj-num">11</div>
-        </div>
-        <h3 class="proj-title">Water Level Controller — Logic Gate Design</h3>
-        <p class="proj-subtitle">Digital Logic · Combinational Design · Proteus</p>
-        <p class="proj-desc">
-          Designed a digital pump control system using combinational logic gates and simulated
-          float switches in Proteus, with manual override capability. Demonstrates that control
-          decisions can be implemented entirely in hardware logic — without software — a key
-          insight in digital systems design.
-        </p>
-        <div class="proj-tech-stack">
-          <span class="tech-pill">Logic Gates</span>
-          <span class="tech-pill">Proteus</span>
-          <span class="tech-pill">Digital Design</span>
-          <span class="tech-pill">Control Systems</span>
-        </div>
-      </div>
+  <div class="proj-tech-stack">
+    <span class="tech-pill">Diodes</span>
+    <span class="tech-pill">Power Electronics</span>
+    <span class="tech-pill">Filtering</span>
+    <span class="tech-pill">Simulation</span>
+  </div>
+</div>
+
+
+<!-- ───────────────────────────────────────────── -->
+<!-- 03 — Common Emitter Amplifier -->
+<!-- ───────────────────────────────────────────── -->
+<div class="proj-card reveal-up" data-cat="electronics" style="animation-delay:0.15s">
+  <div class="proj-glow"></div>
+  <div class="proj-header">
+    <div class="proj-num">03</div>
+  </div>
+
+  <h3 class="proj-title">Common Emitter Amplifier</h3>
+  <p class="proj-subtitle">Analog Electronics · BJT · Signal Amplification</p>
+
+  <p class="proj-desc">
+    Designed a BJT-based common emitter amplifier to study voltage gain, biasing stability,
+    and small-signal behavior. Demonstrates how weak electrical signals can be amplified for
+    audio and sensor applications in analog systems.
+  </p>
+
+  <div class="proj-tech-stack">
+    <span class="tech-pill">BJT</span>
+    <span class="tech-pill">Analog Electronics</span>
+    <span class="tech-pill">Biasing</span>
+    <span class="tech-pill">Gain Analysis</span>
+  </div>
+</div>
+
+
+<!-- ───────────────────────────────────────────── -->
+<!-- 04 — Statistical Data Analysis -->
+<!-- ───────────────────────────────────────────── -->
+<div class="proj-card reveal-up" data-cat="data" style="animation-delay:0.2s">
+  <div class="proj-glow"></div>
+  <div class="proj-header">
+    <div class="proj-num">04</div>
+  </div>
+
+  <h3 class="proj-title">Electrical Dataset Statistical Analysis</h3>
+  <p class="proj-subtitle">Statistics · Regression · Data Analysis</p>
+
+  <p class="proj-desc">
+    Performed statistical analysis on a multi-variable electrical dataset using correlation,
+    regression modeling, and hypothesis testing. Extracted relationships between system parameters
+    and evaluated predictive trends for engineering interpretation.
+  </p>
+
+  <div class="proj-tech-stack">
+    <span class="tech-pill">Python</span>
+    <span class="tech-pill">Statistics</span>
+    <span class="tech-pill">Regression</span>
+    <span class="tech-pill">Data Analysis</span>
+  </div>
+</div>
+
+
+<!-- ───────────────────────────────────────────── -->
+<!-- 05 — Hospital Priority Encoder -->
+<!-- ───────────────────────────────────────────── -->
+<div class="proj-card reveal-up" data-cat="hardware" style="animation-delay:0.25s">
+  <div class="proj-glow"></div>
+  <div class="proj-header">
+    <div class="proj-num">05</div>
+  </div>
+
+  <h3 class="proj-title">Hospital Alert Priority Encoder</h3>
+  <p class="proj-subtitle">Verilog · FPGA · Digital RTL Design</p>
+
+  <p class="proj-desc">
+    Designed a 10-to-4 priority encoder in Verilog for emergency signal arbitration.
+    Implements interrupt-style prioritization using combinational logic and follows full FPGA design flow
+    from RTL design to simulation and synthesis.
+  </p>
+
+  <div class="proj-tech-stack">
+    <span class="tech-pill hot">Verilog</span>
+    <span class="tech-pill">FPGA</span>
+    <span class="tech-pill">Xilinx ISE</span>
+    <span class="tech-pill">Digital Design</span>
+  </div>
+</div>
+
+
+<!-- ───────────────────────────────────────────── -->
+<!-- 06 — AGV -->
+<!-- ───────────────────────────────────────────── -->
+<div class="proj-card reveal-up" data-cat="embedded" style="animation-delay:0.3s">
+  <div class="proj-glow"></div>
+  <div class="proj-header">
+    <div class="proj-num">06</div>
+  </div>
+
+  <h3 class="proj-title">Autonomous Guided Vehicle (AGV)</h3>
+  <p class="proj-subtitle">Arduino · Robotics · Embedded Systems</p>
+
+  <p class="proj-desc">
+    Developed an embedded AGV prototype for industrial logistics using Arduino.
+    Implements sensor-based navigation, obstacle detection, and station stopping logic.
+    Represents warehouse automation and autonomous transport systems.
+  </p>
+
+  <div class="proj-tech-stack">
+    <span class="tech-pill">Arduino</span>
+    <span class="tech-pill">C++</span>
+    <span class="tech-pill">Sensors</span>
+    <span class="tech-pill">Automation</span>
+  </div>
+</div>
+
+
+<!-- ───────────────────────────────────────────── -->
+<!-- 07 — Soil Moisture System -->
+<!-- ───────────────────────────────────────────── -->
+<div class="proj-card reveal-up" data-cat="embedded" style="animation-delay:0.35s">
+  <div class="proj-glow"></div>
+  <div class="proj-header">
+    <div class="proj-num">07</div>
+  </div>
+
+  <h3 class="proj-title">Soil Moisture Monitoring System</h3>
+  <p class="proj-subtitle">PIC · ADC · Embedded Control</p>
+
+  <p class="proj-desc">
+    Built an automated irrigation system using PIC microcontroller.
+    Converts analog soil moisture signals via ADC and triggers irrigation based on thresholds.
+    A foundational smart agriculture and IoT-style embedded system.
+  </p>
+
+  <div class="proj-tech-stack">
+    <span class="tech-pill">PIC MCU</span>
+    <span class="tech-pill">ADC</span>
+    <span class="tech-pill">Embedded C</span>
+    <span class="tech-pill">LCD</span>
+  </div>
+</div>
+
+
+<!-- ───────────────────────────────────────────── -->
+<!-- 08 — Ball-on-Beam -->
+<!-- ───────────────────────────────────────────── -->
+<div class="proj-card reveal-up" data-cat="control" style="animation-delay:0.4s">
+  <div class="proj-glow"></div>
+  <div class="proj-header">
+    <div class="proj-num">08</div>
+  </div>
+
+  <h3 class="proj-title">Ball-on-Beam PID Control System</h3>
+  <p class="proj-subtitle">Control Systems · MATLAB · Simulink</p>
+
+  <p class="proj-desc">
+    Modeled a nonlinear dynamic system and applied PID control to stabilize ball position.
+    Analyzed transient response, steady-state error, and system stability.
+    Represents fundamental feedback control used in robotics and aerospace systems.
+  </p>
+
+  <div class="proj-tech-stack">
+    <span class="tech-pill">MATLAB</span>
+    <span class="tech-pill">Simulink</span>
+    <span class="tech-pill">PID</span>
+    <span class="tech-pill">Stability</span>
+  </div>
+</div>
+
+
+<!-- ───────────────────────────────────────────── -->
+<!-- 09 — ECG Signal Analysis -->
+<!-- ───────────────────────────────────────────── -->
+<div class="proj-card reveal-up" data-cat="signal" style="animation-delay:0.45s">
+  <div class="proj-glow"></div>
+  <div class="proj-header">
+    <div class="proj-num">09</div>
+  </div>
+
+  <h3 class="proj-title">ECG Signal Analysis (Apnea Dataset)</h3>
+  <p class="proj-subtitle">Biomedical · FFT · MATLAB</p>
+
+  <p class="proj-desc">
+    Performed ECG signal analysis using FFT and digital filtering techniques.
+    Extracted frequency-domain features from noisy biomedical signals.
+    Applied techniques used in medical diagnostics and wearable health systems.
+  </p>
+
+  <div class="proj-tech-stack">
+    <span class="tech-pill">MATLAB</span>
+    <span class="tech-pill">FFT</span>
+    <span class="tech-pill">Filtering</span>
+    <span class="tech-pill">Signal Processing</span>
+  </div>
+</div>
+
+
+<!-- ───────────────────────────────────────────── -->
+<!-- 10 — PLC Metal Shaping -->
+<!-- ───────────────────────────────────────────── -->
+<div class="proj-card reveal-up" data-cat="industrial" style="animation-delay:0.5s">
+  <div class="proj-glow"></div>
+  <div class="proj-header">
+    <div class="proj-num">10</div>
+  </div>
+
+  <h3 class="proj-title">PLC-Based Metal Shaping System</h3>
+  <p class="proj-subtitle">PLC · Ladder Logic · Industrial Automation</p>
+
+  <p class="proj-desc">
+    Simulated industrial manufacturing sequence using PLC ladder logic.
+    Implements deterministic step control: clamp → shape → release using pneumatic actuators.
+    Represents CNC-style automation systems used in factories.
+  </p>
+
+  <div class="proj-tech-stack">
+    <span class="tech-pill">PLC</span>
+    <span class="tech-pill">Ladder Logic</span>
+    <span class="tech-pill">Pneumatics</span>
+    <span class="tech-pill">Automation</span>
+  </div>
+</div>
+
+
+<!-- ───────────────────────────────────────────── -->
+<!-- 11 — Water Level Controller -->
+<!-- ───────────────────────────────────────────── -->
+<div class="proj-card reveal-up" data-cat="hardware" style="animation-delay:0.55s">
+  <div class="proj-glow"></div>
+  <div class="proj-header">
+    <div class="proj-num">11</div>
+  </div>
+
+  <h3 class="proj-title">Water Level Controller System</h3>
+  <p class="proj-subtitle">Digital Logic · Proteus · Control Systems</p>
+
+  <p class="proj-desc">
+    Designed a fully hardware-based water tank control system using logic gates and float switches.
+    Implements deterministic pump control without software dependency, demonstrating core digital
+    control principles used in industrial safety systems.
+  </p>
+
+  <div class="proj-tech-stack">
+    <span class="tech-pill">Logic Gates</span>
+    <span class="tech-pill">Proteus</span>
+    <span class="tech-pill">Digital Design</span>
+    <span class="tech-pill">Control Systems</span>
+  </div>
+</div>
 
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════════
-       SECTION 04 — EXPERIENCE
-  ═══════════════════════════════════════════════════════ -->
-  <section id="experience" class="section">
-    <div class="section-label reveal-up">
-      <span class="label-tag">03</span>
-      <h2 class="section-title">Work Experience</h2>
-      <div class="label-line"></div>
+<!-- ═══════════════════════════════════════════════════════
+     SECTION 04 — EXPERIENCE
+═══════════════════════════════════════════════════════ -->
+<section id="experience" class="section">
+  <div class="section-label reveal-up">
+    <span class="label-tag">03</span>
+    <h2 class="section-title">Work Experience</h2>
+    <div class="label-line"></div>
+  </div>
+
+  <div class="exp-layout">
+
+    <div class="exp-card glass-panel reveal-left">
+      <div class="panel-glow"></div>
+
+      <div class="exp-header">
+        <div class="exp-title-block">
+          <div class="exp-company-logo">HF</div>
+          <div>
+            <h3 class="exp-role">Electrical Engineering Intern</h3>
+            <p class="exp-company">Hayleys Fabric PLC · Neboda, Sri Lanka</p>
+          </div>
+        </div>
+        <div class="exp-date-badge">Aug 2025 — Feb 2026</div>
+      </div>
+
+      <div class="exp-impact-bar">
+        <div class="impact-item">
+          <span class="impact-val">+37.5%</span>
+          <span class="impact-label">Production throughput improvement (16 → 22 m/min)</span>
+        </div>
+        <div class="impact-divider"></div>
+        <div class="impact-item">
+          <span class="impact-val">~5°C</span>
+          <span class="impact-label">Process temperature reduction</span>
+        </div>
+      </div>
+
+      <div class="exp-areas">
+
+        <div class="exp-area-group">
+          <h4 class="exp-area-title">⚡ Industrial Automation & VFD Systems</h4>
+          <ul class="exp-bullets">
+            <li>Configured Schneider Electric Variable Frequency Drives (VFDs), including acceleration/deceleration tuning and frequency limit settings for industrial machines</li>
+          </ul>
+        </div>
+
+        <div class="exp-area-group">
+          <h4 class="exp-area-title">🔧 Motor Control Systems</h4>
+          <ul class="exp-bullets">
+            <li>Worked with DOL (Direct-On-Line), Star-Delta, and Forward/Reverse motor control circuits in industrial environments</li>
+            <li>Performed troubleshooting and maintenance of motor control systems under operational conditions</li>
+          </ul>
+        </div>
+
+        <div class="exp-area-group">
+          <h4 class="exp-area-title">🔬 Sensor-Based Instrumentation</h4>
+          <ul class="exp-bullets">
+            <li>Worked with PT100 temperature sensors, pressure sensors, relays, timers, and industrial gauges</li>
+            <li>Assisted in calibration and integration of sensors into live production systems</li>
+          </ul>
+        </div>
+
+        <div class="exp-area-group">
+          <h4 class="exp-area-title">🏭 Machine Installation & Commissioning</h4>
+          <ul class="exp-bullets">
+            <li>Assisted installation and commissioning of washing range and dryer machines</li>
+            <li>Performed cable routing, wiring, sensor connections, calibration, and interpretation of electrical drawings</li>
+          </ul>
+        </div>
+
+        <div class="exp-area-group">
+          <h4 class="exp-area-title">🛠 Industrial Machine Modification Support</h4>
+          <ul class="exp-bullets">
+            <li>Assisted modification activities of Root-C Lapping Inspection Machine</li>
+            <li>Supported BOQ preparation, component handling, system observation, and technical issue reporting</li>
+          </ul>
+        </div>
+
+        <div class="exp-area-group">
+          <h4 class="exp-area-title">📊 Industrial Data Analysis & Optimization</h4>
+          <ul class="exp-bullets">
+            <li>Conducted Excel-based data analysis for Stenter Machine No. 4 (TY04) using Pleva dwell time module</li>
+            <li>Achieved process improvements including production speed increase (16 → 22 m/min) and temperature reduction (~5°C)</li>
+          </ul>
+        </div>
+
+        <div class="exp-area-group">
+          <h4 class="exp-area-title">⚙ Maintenance Engineering</h4>
+          <ul class="exp-bullets">
+            <li>Assisted preventive and breakdown maintenance activities including motor inspection and insulation testing using megger</li>
+          </ul>
+        </div>
+
+        <div class="exp-area-group">
+          <h4 class="exp-area-title">🔌 Pneumatics & Valve Systems</h4>
+          <ul class="exp-bullets">
+            <li>Serviced pneumatic systems including air lines, actuators, and valves</li>
+            <li>Cleaned actuators affected by water ingress and repaired 2-way solenoid valves by replacing faulty coils</li>
+          </ul>
+        </div>
+
+        <div class="exp-area-group">
+          <h4 class="exp-area-title">⚡ Power Monitoring & Energy Systems</h4>
+          <ul class="exp-bullets">
+            <li>Monitored daily power consumption and recorded energy performance data for industrial analysis</li>
+          </ul>
+        </div>
+
+        <div class="exp-area-group">
+          <h4 class="exp-area-title">📈 Reliability Engineering</h4>
+          <ul class="exp-bullets">
+            <li>Prepared MTTR (Mean Time To Repair) and MTBF (Mean Time Between Failures) reports using Excel-based maintenance data</li>
+          </ul>
+        </div>
+
+        <div class="exp-area-group">
+          <h4 class="exp-area-title">🏢 Industrial Operations & Safety</h4>
+          <ul class="exp-bullets">
+            <li>Participated in engineering store inventory management and logistics support</li>
+            <li>Followed strict industrial safety procedures and site safety inductions during all operations</li>
+          </ul>
+        </div>
+
+        <div class="exp-area-group">
+          <h4 class="exp-area-title">🌧 Concept Development (Renewable Systems)</h4>
+          <ul class="exp-bullets">
+            <li>Participated in conceptual development of a rainwater harvesting system for the water treatment plant</li>
+            <li>Studied integration of sensor-based control logic with PLC automation systems</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="exp-tech-row">
+        <span class="tech-pill">Schneider VFDs</span>
+        <span class="tech-pill">PLC Systems</span>
+        <span class="tech-pill">PT100 Sensors</span>
+        <span class="tech-pill">Pneumatics</span>
+        <span class="tech-pill">Motor Control</span>
+        <span class="tech-pill">Megger Testing</span>
+        <span class="tech-pill">MTTR / MTBF</span>
+        <span class="tech-pill">Excel Analytics</span>
+        <span class="tech-pill">Industrial Safety</span>
+        <span class="tech-pill">Energy Monitoring</span>
+      </div>
+
     </div>
+  </div>
+</section>
 
-    <div class="exp-layout">
+ <!-- ═══════════════════════════════════════════════════════
+     SECTION 05 — RESEARCH TIMELINE
+═══════════════════════════════════════════════════════ -->
+<section id="research" class="section">
+  <div class="section-label reveal-up">
+    <span class="label-tag">04</span>
+    <h2 class="section-title">Research Timeline</h2>
+    <div class="label-line"></div>
+  </div>
 
-      <div class="exp-card glass-panel reveal-left">
+  <div class="timeline-track">
+    <div class="timeline-spine"></div>
+
+    <!-- 2023 -->
+    <div class="tl-item tl-left reveal-left">
+      <div class="tl-year">2023</div>
+      <div class="tl-node"></div>
+      <div class="tl-content glass-panel">
         <div class="panel-glow"></div>
-        <div class="exp-header">
-          <div class="exp-title-block">
-            <div class="exp-company-logo">HF</div>
-            <div>
-              <h3 class="exp-role">Electrical Engineering Intern</h3>
-              <p class="exp-company">Hayleys Fabric PLC · Neboda, Sri Lanka</p>
-            </div>
-          </div>
-          <div class="exp-date-badge">Aug 2025 — Feb 2026</div>
-        </div>
-
-        <div class="exp-impact-bar">
-          <div class="impact-item">
-            <span class="impact-val">+37.5%</span>
-            <span class="impact-label">Production Speed ↑ (16 → 22 m/min)</span>
-          </div>
-          <div class="impact-divider"></div>
-          <div class="impact-item">
-            <span class="impact-val">~5°C</span>
-            <span class="impact-label">Temperature Reduction</span>
-          </div>
-        </div>
-
-        <div class="exp-areas">
-          <div class="exp-area-group">
-            <h4 class="exp-area-title">⚡ VFDs &amp; Motor Control</h4>
-            <ul class="exp-bullets">
-              <li>Configured Schneider Electric Variable Frequency Drives — acceleration/deceleration profiles and operational frequency limits for industrial motor systems</li>
-              <li>Troubleshot and maintained DOL, star-delta, and forward-reverse motor control systems</li>
-            </ul>
-          </div>
-          <div class="exp-area-group">
-            <h4 class="exp-area-title">🔬 Instrumentation &amp; Sensing</h4>
-            <ul class="exp-bullets">
-              <li>Worked with PT100 temperature sensors, pressure sensors, relays, timers, and pneumatic actuators in live manufacturing environments</li>
-              <li>Supported installation and commissioning of industrial washing/dryer systems including sensor calibration, cable routing, and electrical integration</li>
-            </ul>
-          </div>
-          <div class="exp-area-group">
-            <h4 class="exp-area-title">📊 Analysis &amp; Reporting</h4>
-            <ul class="exp-bullets">
-              <li>Conducted process-performance analysis for Stenter machine optimisation using Excel data analysis — production speed improved 16 → 22 m/min and operating temperature reduced ~5°C</li>
-              <li>Prepared MTTR and MTBF maintenance reliability reports from operational data</li>
-            </ul>
-          </div>
-          <div class="exp-area-group">
-            <h4 class="exp-area-title">🔧 Pneumatics &amp; Maintenance</h4>
-            <ul class="exp-bullets">
-              <li>Performed maintenance and fault rectification of pneumatic systems including solenoid valve replacement and leakage correction</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="exp-tech-row">
-          <span class="tech-pill">Schneider VFDs</span>
-          <span class="tech-pill">PLC Systems</span>
-          <span class="tech-pill">PT100 Sensors</span>
-          <span class="tech-pill">Pneumatics</span>
-          <span class="tech-pill">Motor Control</span>
-          <span class="tech-pill">MTTR/MTBF</span>
-          <span class="tech-pill">Excel Analytics</span>
-        </div>
+        <div class="tl-content-tag">Foundation</div>
+        <h3 class="tl-title">Early Engineering &amp; Digital Design</h3>
+        <p>
+          This stage built the technical base for my later work in embedded systems, control, and hardware design.
+          I focused on circuit fundamentals, analog electronics, and introductory digital logic, while developing
+          an understanding of how electrical signals behave in real systems. My early work included circuit analysis,
+          rectifier and amplifier design, water level control logic, and first exposure to FPGA‑oriented thinking.
+          This period established the first layer of my engineering identity: learning how to move from theory to
+          simulation and from simulation to implementable hardware concepts.
+        </p>
       </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════
-       SECTION 05 — RESEARCH TIMELINE
-  ═══════════════════════════════════════════════════════ -->
-  <section id="research" class="section">
-    <div class="section-label reveal-up">
-      <span class="label-tag">04</span>
-      <h2 class="section-title">Research Timeline</h2>
-      <div class="label-line"></div>
     </div>
 
-    <div class="timeline-track">
-      <div class="timeline-spine"></div>
-
-      <div class="tl-item tl-left reveal-left">
-        <div class="tl-year">2023</div>
-        <div class="tl-node"></div>
-        <div class="tl-content glass-panel">
-          <div class="panel-glow"></div>
-          <div class="tl-content-tag">Foundation</div>
-          <h3 class="tl-title">Early Engineering &amp; Digital Design</h3>
-          <!--
-          ╔═══════════════════════════════════════════════╗
-          ║  ADD: Your 2023 projects and milestones        ║
-          ║  - Water level controller                      ║
-          ║  - Rectifier & amplifier design                ║
-          ║  - RLC analysis                                ║
-          ║  - Any other early work                        ║
-          ╚═══════════════════════════════════════════════╝
-          -->
-          <p>[ADD: Your early 2023 projects — logic design, analog electronics, first FPGA experiments, and other foundational work.]</p>
-        </div>
+    <!-- 2024 -->
+    <div class="tl-item tl-right reveal-right">
+      <div class="tl-year">2024</div>
+      <div class="tl-node"></div>
+      <div class="tl-content glass-panel">
+        <div class="panel-glow"></div>
+        <div class="tl-content-tag">Embedded &amp; Control</div>
+        <h3 class="tl-title">Robotics, Embedded Systems &amp; Signal Processing</h3>
+        <p>
+          This year marked a transition from foundational electronics into complete system design.
+          I developed PIC‑based soil moisture monitoring and irrigation control, built an Arduino‑based AGV concept
+          for garment industry automation, and modelled a ball‑on‑beam PID control system in Simulink.
+          I also worked on ECG biomedical signal processing using FFT and digital filtering in MATLAB,
+          designed a PLC‑based metal shaping machine with pneumatic sequencing, and carried out statistical analysis
+          on a 50‑variable electrical engineering dataset using SPSS. This year strengthened my ability to connect
+          sensing, logic, control, and data analysis into practical engineering systems.
+        </p>
       </div>
-
-      <div class="tl-item tl-right reveal-right">
-        <div class="tl-year">2024</div>
-        <div class="tl-node"></div>
-        <div class="tl-content glass-panel">
-          <div class="panel-glow"></div>
-          <div class="tl-content-tag">Embedded &amp; Control</div>
-          <h3 class="tl-title">Robotics, Embedded Systems &amp; Signal Processing</h3>
-          <p>
-            Built PIC-based soil moisture monitoring and irrigation systems. Designed Arduino-based AGV
-            for garment industry automation. Modelled ball-on-beam PID control in Simulink. Processed
-            ECG biomedical signals using FFT and digital filtering in MATLAB. Designed PLC-based metal
-            shaping machine with pneumatic sequencing. Statistical dataset analysis using SPSS
-            on 50-variable electrical engineering dataset.
-          </p>
-        </div>
-      </div>
-
-      <div class="tl-item tl-left reveal-left">
-        <div class="tl-year">2025</div>
-        <div class="tl-node tl-node-accent"></div>
-        <div class="tl-content glass-panel">
-          <div class="panel-glow"></div>
-          <div class="tl-content-tag">AI &amp; Industry</div>
-          <h3 class="tl-title">HD Final Year — SLAM Robot &amp; Industrial Internship</h3>
-          <p>
-            Completed HD Final Year Project: Semantic-Aware SLAM Robot with Reinforcement Learning and
-            Triple-Layer Safety (Group ROBOSERVE). Implemented RTAB-Map SLAM, PPO/SAC RL agents with
-            Stable-Baselines3, YOLO semantic segmentation, and triple-layer safety in ROS 2 / Gazebo.
-            Simultaneously completed Electrical Engineering internship at Hayleys Fabric PLC — working on
-            industrial VFDs, motor control circuits, and Stenter machine process optimisation. Graduated
-            HD with <strong>Distinction</strong> and Academic Excellence Award.
-          </p>
-        </div>
-      </div>
-
-      <div class="tl-item tl-right reveal-right">
-        <div class="tl-year">2026</div>
-        <div class="tl-node tl-node-active"></div>
-        <div class="tl-content glass-panel">
-          <div class="panel-glow"></div>
-          <div class="tl-content-tag">BEng FYP · Active</div>
-          <h3 class="tl-title">Custom Processor &amp; Adaptive Cache Research</h3>
-          <p>
-            BEng Final Year Project: Adaptive Cache Controller on custom 8-bit processor in SystemVerilog.
-            Research contribution: hardware-enforced legal-action mask for bounded RL exploration —
-            addressing an identified gap in adaptive cache literature. Full-core UVM verification with
-            zero failures. FPGA-targeted synthesis meeting 50 MHz. Simultaneously pursuing BSc Natural
-            Science at OUSL.
-          </p>
-        </div>
-      </div>
-
-      <div class="tl-item tl-left reveal-left">
-        <div class="tl-year">Future</div>
-        <div class="tl-node tl-node-future"></div>
-        <div class="tl-content glass-panel tl-future-card">
-          <div class="panel-glow"></div>
-          <div class="tl-content-tag">Vision</div>
-          <h3 class="tl-title">Long-Term Goals &amp; Research Direction</h3>
-          <!--
-          ╔═══════════════════════════════════════════════════════╗
-          ║  ADD: Your future ambitions                           ║
-          ║  - Entry-level RTL/FPGA role? (NVIDIA, AMD, Arm...)  ║
-          ║  - PhD in computer architecture?                      ║
-          ║  - Open-source CPU project?                          ║
-          ║  - ASIC design / SoC engineering?                    ║
-          ╚═══════════════════════════════════════════════════════╝
-          -->
-          <p>[ADD: Your long-term career and research goals — industry target, dream company, PhD ambitions, or open-source hardware projects you want to pursue.]</p>
-        </div>
-      </div>
-
     </div>
-  </section>
+
+    <!-- 2025 -->
+    <div class="tl-item tl-left reveal-left">
+      <div class="tl-year">2025</div>
+      <div class="tl-node tl-node-accent"></div>
+      <div class="tl-content glass-panel">
+        <div class="panel-glow"></div>
+        <div class="tl-content-tag">AI &amp; Industry</div>
+        <h3 class="tl-title">HD Final Year — SLAM Robot &amp; Industrial Internship</h3>
+        <p>
+          This was a major year of integration across robotics, artificial intelligence, and industrial practice.
+          I completed my Higher Diploma final year project, <strong>Semantic‑Aware SLAM Robot with Reinforcement
+          Learning and Triple‑Layer Safety</strong>, as part of Group ROBOSERVE. The project combined RTAB‑Map SLAM,
+          PPO and SAC reinforcement learning agents using Stable‑Baselines3, YOLO‑based semantic segmentation,
+          and layered safety logic in ROS 2 and Gazebo. At the same time, I completed my electrical engineering
+          industrial training at Hayleys Fabric PLC, where I worked on industrial VFDs, motor control circuits,
+          instrumentation, maintenance, and Stenter machine process optimisation. I graduated with
+          <strong>Distinction</strong> and received the <strong>Academic Excellence Award</strong>, reflecting
+          both technical development and consistent performance.
+        </p>
+      </div>
+    </div>
+
+    <!-- 2026 -->
+    <div class="tl-item tl-right reveal-right">
+      <div class="tl-year">2026</div>
+      <div class="tl-node tl-node-active"></div>
+      <div class="tl-content glass-panel">
+        <div class="panel-glow"></div>
+        <div class="tl-content-tag">BEng FYP · Active</div>
+        <h3 class="tl-title">Custom Processor &amp; Adaptive Cache Research</h3>
+        <p>
+          My current work moves deeper into computer architecture and hardware research.
+          My BEng final year project focuses on an <strong>adaptive cache controller for a custom 8‑bit processor</strong>
+          implemented in SystemVerilog. My research contribution is a hardware‑enforced legal‑action mask for
+          bounded reinforcement learning exploration, addressing a gap in adaptive cache literature by constraining
+          learning behaviour at the hardware level. The design is being verified with full‑core UVM verification
+          and targeted for FPGA synthesis at 50 MHz. At the same time, I am continuing my BSc Natural Science
+          studies at OUSL, which strengthens my mathematical and scientific foundation.
+        </p>
+      </div>
+    </div>
+
+    <!-- Future -->
+    <div class="tl-item tl-left reveal-left">
+      <div class="tl-year">Future</div>
+      <div class="tl-node tl-node-future"></div>
+      <div class="tl-content glass-panel tl-future-card">
+        <div class="panel-glow"></div>
+        <div class="tl-content-tag">Vision</div>
+        <h3 class="tl-title">Long-Term Goals &amp; Research Direction</h3>
+        <p>
+          My long‑term direction is toward advanced digital hardware and intelligent computing systems.
+          I want to work in <strong>processor design, ASIC/SoC development, and hardware architecture</strong>,
+          especially in areas where performance, efficiency, and adaptability matter. My broader research interest
+          is in adaptive hardware systems, memory hierarchy design, and hardware–software co‑design for intelligent
+          computing. In the long term, I aim to contribute to industry‑level processor development and, if possible,
+          continue into research that pushes the boundary of how learning‑based methods can be integrated into
+          hardware systems.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
 
   <!-- ═══════════════════════════════════════════════════════
        SECTION 06 — SKILLS
