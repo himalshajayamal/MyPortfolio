@@ -132,7 +132,8 @@ const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
   }
 
   function buildScene() {
-    const count = Math.floor((W * H) / 6500);
+	let divisor = window.innerWidth < 768 ? 10000 : 6500;
+	const count = Math.floor((W * H) / divisor);
     stars = Array.from({ length: count }, () => ({
       x:     Math.random() * W,
       y:     Math.random() * H,
@@ -364,6 +365,7 @@ function initScrollReveal() {
     }
   });
 
+  // Lower threshold for mobile, and add a fallback
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -371,9 +373,18 @@ function initScrollReveal() {
         obs.unobserve(e.target);
       }
     });
-  }, { threshold: 0.08 });
+  }, { threshold: 0.1 }); // was 0.08, now 0.1 for better mobile detection
 
   $$('.reveal-up, .reveal-left, .reveal-right').forEach(el => obs.observe(el));
+
+  // Fallback: after 2.5 seconds, reveal everything that is still hidden (safety net)
+  setTimeout(() => {
+    $$('.reveal-up, .reveal-left, .reveal-right').forEach(el => {
+      if (!el.classList.contains('visible')) {
+        el.classList.add('visible');
+      }
+    });
+  }, 2500);
 }
 
 /* ─────────────────────────────────────────────────────────────────────
@@ -780,6 +791,12 @@ function initLogoGlitch() {
    START — called after loader finishes
 ───────────────────────────────────────────────────────────────────── */
 function startAnimations() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    initFilter();
+    initSmoothScroll();
+    initBackToTop();
+    return;
+  }
   initScrollReveal();
   initCounters();
   initSkillBars();
